@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "Cherry",
+  "version": "${version}",
+  "name": "Cherry Client",
+  "description": "The Cherry Minecraft client for 1.14.4!",
+  "authors": [
+    "Reece Dunham"
+  ],
+  "contact": {
+    "homepage": "https://cherry.rdil.rocks/",
+    "sources": "https://github.com/RDIL/Cherry/"
+  },
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "rocks.rdil.cherry.Startup"
+    ]
+  },
+  "mixins": [
+    "cherry.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.4.0",
+    "fabric": "*",
+    "minecraft": "1.14.4"
+  }
+}
