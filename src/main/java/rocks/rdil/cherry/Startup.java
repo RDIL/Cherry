@@ -9,7 +9,7 @@ public final class Startup implements ModInitializer {
     private static boolean initialized;
 
     @Override
-    public void onInitialize() {	
+    public void onInitialize() {
         if (initialized) {
             throw new RuntimeException("onInitialize() called twice, this SHOULD NOT HAPPEN!!!");
         }
