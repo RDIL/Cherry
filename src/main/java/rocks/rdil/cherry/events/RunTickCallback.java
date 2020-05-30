@@ -14,7 +14,7 @@ public class RunTickCallback implements ICallback {
             return;
         }
 
-        if(player.forwardSpeed > 0) {
+        if (player.forwardSpeed > 0) {
             player.setSprinting(true);
         }
     }
