@@ -9,13 +9,13 @@ import java.io.FileWriter;
 import lombok.Cleanup;
 
 public class ConfigManager {
-    private final File file;
-    private Config config;
+    public static final File file = new File("cherry-config.txt");
+    public Config config;
+    public static final ConfigManager instance = new ConfigManager();
 
-    public ConfigManager(File f) {
-        this.file = f;
+    public ConfigManager() {
         try {
-            if (f.exists()) {
+            if (file.exists()) {
                 FileReader fr = new FileReader(file);
                 @Cleanup BufferedReader br = new BufferedReader(fr);
                 StringBuilder builder = new StringBuilder();
@@ -26,6 +26,7 @@ public class ConfigManager {
 
                 this.config = this.fromConfigFile(builder.toString());
             } else {
+                this.config = defaultConfig();
                 this.save();
             }
         } catch (Exception e) {
@@ -37,11 +38,11 @@ public class ConfigManager {
         String[] strings = config.replace("Config(", "").replace(")", "").split(",");
         Config c = new Config();
 
-        for (int i = 0; i < strings.length; i++) {
-            String key = strings[i].split("=")[0];
-            String value = strings[i].split("=")[1];
+        for (String string : strings) {
+            String key = string.split("=")[0];
+            String value = string.split("=")[1];
 
-            if (key == "toggleSprint") {
+            if (key.equals("toggleSprint")) {
                 c.setToggleSprint(value);
             }
         }

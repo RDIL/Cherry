@@ -15,5 +15,7 @@ public final class Startup implements ModInitializer {
         }
 
         initialized = true;
+
+        new CherryCommand();
     }
 }

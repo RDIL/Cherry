@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "Cherry",
+  "id": "cherry",
   "version": "${version}",
   "name": "Cherry Client",
   "description": "The Cherry Minecraft client for 1.14.4!",

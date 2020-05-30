@@ -15,6 +15,6 @@ public class ClientPlayerEntityMixin {
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;tick()V", ordinal = 0), method = "tick()V")
     private void onTick(CallbackInfo ci) {
-		((ICallback) cherryRunTick).run();
+		cherryRunTick.run();
     }
 }
