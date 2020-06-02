@@ -7,4 +7,5 @@ import lombok.Setter;
 @Data
 public class Config {
     @Getter @Setter private String toggleSprint;
+    @Getter @Setter private String enableTutorialPopups;
 }

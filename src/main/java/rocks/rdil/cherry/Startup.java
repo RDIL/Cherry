@@ -1,6 +1,7 @@
 package rocks.rdil.cherry;
 
 import net.fabricmc.api.ModInitializer;
+import rocks.rdil.cherry.commands.CherryCommand;
 
 /**
  * Starts the client.
