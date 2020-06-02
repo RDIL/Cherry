@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import rocks.rdil.cherry.config.ConfigManager;
 
 @Mixin(TutorialManager.class)
-public class TutorialManagerMixin {
+public class MixinTutorialManager {
     @Inject(at = @At("HEAD"), method = "onBlockAttacked", cancellable = true)
     public void onBlockAttacked(ClientWorld world, BlockPos pos, BlockState state, float f, CallbackInfo ci) {
         if (!ConfigManager.instance.config.getEnableTutorialPopups().equals("true")) {

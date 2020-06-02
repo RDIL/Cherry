@@ -2,7 +2,6 @@ package rocks.rdil.cherry.gui;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.resource.language.I18n;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
@@ -10,41 +9,38 @@ import rocks.rdil.cherry.config.ConfigManager;
 import rocks.rdil.cherry.config.Config;
 
 public class CherryGui extends Screen {
-    public CherryGui(Screen parent) {
+    public CherryGui() {
         super(getTitleTextComponent());
     }
 
     protected void init() {
-        int j = this.width / 2 - 155 + 0 % 2 * 160;
-        int k = this.height / 6 + 24 * (0 >> 1);
+        final int x = this.width / 2 - 100;
+        int y = this.height / 6;
+
+        System.out.println(this.height);
 
         Config c = ConfigManager.instance.config;
 
-        ButtonWidget toggleSprint = new ButtonWidget(j, k, 200, 20, "ToggleSprint: " + fromConfig(c.getToggleSprint()), button -> {
-            c.setToggleSprint(c.getToggleSprint() == "true" ? "false" : "true");
+        ButtonWidget toggleSprint = new ButtonWidget(x, y, 200, 20, "ToggleSprint: " + fromConfig(c.getToggleSprint()), button -> {
+            c.setToggleSprint(c.getToggleSprint().equals("true") ? "false" : "true");
             ConfigManager.instance.save();
             button.setMessage("ToggleSprint: " + fromConfig(c.getToggleSprint()));
         });
 
-        j = this.width / 2 - 155 + 1 % 2 * 160;
-        k = this.height / 6 + 24 * (1 >> 1);
+        int y2 = y + (this.height / 8);
 
-        ButtonWidget enableTutorialPopups = new ButtonWidget(j, k, 200, 20, "Tutorial Popups: " + fromConfig(c.getEnableTutorialPopups()), button -> {
-            c.setEnableTutorialPopups(c.getEnableTutorialPopups() == "true" ? "false" : "true");
+        ButtonWidget enableTutorialPopups = new ButtonWidget(x, y2, 200, 20, "Tutorial Popups: " + fromConfig(c.getEnableTutorialPopups()), button -> {
+            c.setEnableTutorialPopups(c.getEnableTutorialPopups().equals("true") ? "false" : "true");
             ConfigManager.instance.save();
             button.setMessage("Tutorial Popups: " + fromConfig(c.getEnableTutorialPopups()));
         });
 
         this.addButton(toggleSprint);
         this.addButton(enableTutorialPopups);
-
-        this.addButton(new ButtonWidget(this.width / 2 - 100, this.height - 300, 200, 20, I18n.translate("gui.done"), (buttonWidget) -> {
-            this.minecraft.openScreen(null);
-        }));
     }
 
     private String fromConfig(String s) {
-        return s == "true" ? "Enabled" : "Disabled";
+        return s.equals("true") ? "Enabled" : "Disabled";
     }
 
     public void render(int mouseX, int mouseY, float delta) {

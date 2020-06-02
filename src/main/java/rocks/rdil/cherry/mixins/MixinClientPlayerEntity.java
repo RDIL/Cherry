@@ -9,7 +9,7 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import rocks.rdil.cherry.events.RunTickCallback;
 
 @Mixin(ClientPlayerEntity.class)
-public class ClientPlayerEntityMixin {
+public class MixinClientPlayerEntity {
     private static final RunTickCallback cherryRunTick = new RunTickCallback();
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;tick()V", ordinal = 0), method = "tick()V")

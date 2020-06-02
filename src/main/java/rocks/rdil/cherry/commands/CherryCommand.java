@@ -3,7 +3,7 @@ package rocks.rdil.cherry.commands;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.server.command.CommandManager;
-import net.minecraft.text.LiteralText;
+import rocks.rdil.cherry.gui.CherryGui;
 
 import java.util.Arrays;
 import java.util.List;
