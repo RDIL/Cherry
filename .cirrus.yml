@@ -2,8 +2,6 @@ task:
   auto_cancellation: $CIRRUS_BRANCH != 'master' && $CIRRUS_TAG != ''
   container:
     image: gradle:4.10.3
-    cpu: 4
-    memory: 10G
   gradle_cache:
     folder: ~/.gradle/caches
   script: gradle build

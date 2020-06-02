@@ -6,7 +6,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.network.ClientPlayerEntity;
-import rocks.rdil.cherry.events.ICallback;
 import rocks.rdil.cherry.events.RunTickCallback;
 
 @Mixin(ClientPlayerEntity.class)
