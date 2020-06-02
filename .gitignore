@@ -29,3 +29,4 @@ run/
 hs_err_pid*
 
 .theia
+*.jar

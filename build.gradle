@@ -41,10 +41,11 @@ jar {
     from "LICENSE"
 }
 
+task copyJarToRoot(type: Copy) {
+    from "build/libs/CherryClient-1.0.0.jar"
+    into "."
+}
+
 build {
     dependsOn remapJar
-
-    doLast {
-        println "here"
-    }
 }
