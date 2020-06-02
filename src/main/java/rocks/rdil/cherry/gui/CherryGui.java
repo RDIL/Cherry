@@ -10,11 +10,8 @@ import rocks.rdil.cherry.config.ConfigManager;
 import rocks.rdil.cherry.config.Config;
 
 public class CherryGui extends Screen {
-    Screen parent;
-
     public CherryGui(Screen parent) {
         super(getTitleTextComponent());
-        this.parent = parent;
     }
 
     protected void init() {
@@ -42,7 +39,7 @@ public class CherryGui extends Screen {
         this.addButton(enableTutorialPopups);
 
         this.addButton(new ButtonWidget(this.width / 2 - 100, this.height - 300, 200, 20, I18n.translate("gui.done"), (buttonWidget) -> {
-            this.minecraft.openScreen(this.parent);
+            this.minecraft.openScreen(null);
         }));
     }
 
