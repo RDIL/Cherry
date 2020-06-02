@@ -35,7 +35,7 @@ public class ConfigManager {
     }
 
     Config fromConfigFile(String config) {
-        String[] strings = config.replace("Config(", "").replace(")", "").split(",");
+        String[] strings = config.replace("Config(", "").replace(")", "").split(", ");
         Config c = new Config();
 
         for (String string : strings) {
@@ -44,6 +44,10 @@ public class ConfigManager {
 
             if (key.equals("toggleSprint")) {
                 c.setToggleSprint(value);
+            }
+
+            if (key.equals("enableTutorialPopups")) {
+                c.setEnableTutorialPopups(value);
             }
         }
 
@@ -62,6 +66,7 @@ public class ConfigManager {
     Config defaultConfig() {
         Config c = new Config();
         c.setToggleSprint("false");
+        c.setEnableTutorialPopups("true");
         return c;
     }
 }
