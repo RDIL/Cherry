@@ -6,7 +6,9 @@
   ],
   "client": [
     "MixinClientPlayerEntity",
-    "MixinTutorialManager"
+    "MixinTutorialManager",
+    "MixinConnectScreen",
+    "MixinClientBrandRetriever"
   ],
   "injectors": {
     "defaultRequire": 1
