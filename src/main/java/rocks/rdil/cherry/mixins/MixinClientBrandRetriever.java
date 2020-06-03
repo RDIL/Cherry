@@ -14,7 +14,7 @@ public class MixinClientBrandRetriever {
      * @reason Have it noted in crash reports.
      */
     @Overwrite
-    public String getClientModName() {
+    public static String getClientModName() {
         return "Cherry";
     }
 }
