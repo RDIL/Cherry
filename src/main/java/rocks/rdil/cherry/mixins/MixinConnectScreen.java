@@ -4,19 +4,17 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ConnectScreen;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.network.ServerInfo;
 import net.minecraft.client.util.NarratorManager;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Util;
 
 @Mixin(ConnectScreen.class)
-public abstract class MixinConnectScreen extends ConnectScreen {
-    public MixinConnectScreen(Screen parent, MinecraftClient client, ServerInfo entry) {
-        super(parent, client, entry);
+public abstract class MixinConnectScreen extends Screen {
+    protected MixinConnectScreen(Text title) {
+        super(title);
     }
 
     private int spinnerFrame = 0;
