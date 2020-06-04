@@ -1,7 +1,6 @@
 package rocks.rdil.cherry;
 
 import net.fabricmc.api.ModInitializer;
-import rocks.rdil.cherry.commands.CherryCommand;
 
 /**
  * Starts the client.
@@ -16,7 +15,5 @@ public final class Startup implements ModInitializer {
         }
 
         initialized = true;
-
-        new CherryCommand();
     }
 }
