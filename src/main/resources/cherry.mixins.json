@@ -8,7 +8,8 @@
     "MixinClientPlayerEntity",
     "MixinTutorialManager",
     "MixinConnectScreen",
-    "MixinClientBrandRetriever"
+    "MixinClientBrandRetriever",
+    "MixinStonecutterContainer"
   ],
   "injectors": {
     "defaultRequire": 1
