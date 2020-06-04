@@ -1,8 +1,6 @@
 import React from "react"
 import classnames from "classnames"
 import Layout from "@theme/Layout"
-import Link from "@docusaurus/Link"
-import useBaseUrl from "@docusaurus/useBaseUrl"
 import styles from "./styles.module.css"
 
 const features = [
@@ -53,7 +51,7 @@ function Home() {
   return (
     <Layout
       title={`Welcome`}
-      description="Description will go into a meta tag in <head />"
+      description="Welcome to Cherry, a utility Minecraft (legit) client for 1.14.4, built off Fabric with love."
     >
       <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
@@ -61,14 +59,6 @@ function Home() {
           <p className="hero__subtitle">
             The Cherry Minecraft client for 1.14.4!
           </p>
-          <div className={styles.buttons}>
-            <Link
-              className={"button button--outline button--lg"}
-              to={useBaseUrl("docs/")}
-            >
-              Download
-            </Link>
-          </div>
         </div>
       </header>
       <main>
