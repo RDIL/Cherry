@@ -17,8 +17,6 @@ public class CherryGui extends Screen {
         final int x = this.width / 2 - 100;
         int y = this.height / 6;
 
-        System.out.println(this.height);
-
         Config c = ConfigManager.instance.config;
 
         ButtonWidget toggleSprint = new ButtonWidget(x, y, 200, 20, "ToggleSprint: " + fromConfig(c.getToggleSprint()), button -> {
