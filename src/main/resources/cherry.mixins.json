@@ -9,7 +9,6 @@
     "MixinTutorialManager",
     "MixinConnectScreen",
     "MixinClientBrandRetriever",
-    "MixinStonecutterContainer",
     "MixinGameMenuScreen"
   ],
   "injectors": {
