@@ -36,7 +36,6 @@ class ConfigHandler(private val file: File) {
                         // Set the variable to the name from the json .
                         it[config] = gson.fromJson(cfg[it.name], it.type)
                     } catch (e: Exception) {
-                        // Throw an error to say that Config Opts can not be final
                         error("Config Opts cannot be final!")
                     }
                 }
