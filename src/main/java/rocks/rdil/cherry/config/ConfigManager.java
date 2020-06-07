@@ -17,7 +17,8 @@ public class ConfigManager {
         try {
             if (file.exists()) {
                 FileReader fr = new FileReader(file);
-                @Cleanup BufferedReader br = new BufferedReader(fr);
+                @Cleanup
+                BufferedReader br = new BufferedReader(fr);
                 StringBuilder builder = new StringBuilder();
                 String line;
                 while ((line = br.readLine()) != null) {

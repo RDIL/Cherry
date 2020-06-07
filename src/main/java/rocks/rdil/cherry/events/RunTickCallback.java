@@ -7,6 +7,8 @@ import rocks.rdil.cherry.config.ConfigManager;
 
 @NoArgsConstructor
 public class RunTickCallback implements ICallback {
+    public static final RunTickCallback instance = new RunTickCallback();
+
     @Override
     public void run() {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
