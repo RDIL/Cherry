@@ -12,7 +12,7 @@ import rocks.rdil.simpleconfig.ConfigHandler;
 public final class Startup implements ModInitializer {
     public static Startup instance;
     private static boolean initialized;
-    public ConfigHandler configHandler = new ConfgHandler(new File("cherry-config.json"));
+    public ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
 
     @Override
     public void onInitialize() {
