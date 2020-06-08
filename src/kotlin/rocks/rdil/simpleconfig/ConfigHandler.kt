@@ -5,7 +5,7 @@ import com.google.gson.JsonParser
 import java.io.File
 
 class ConfigHandler(private val file: File) {
-    private var cfg = JsonObject()
+    var cfg = JsonObject()
 
     /**
      * Create a list of the registered configurations. To add to this use ConfigHandler#register(config)
