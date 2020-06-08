@@ -23,12 +23,12 @@ class ConfigHandler(private val file: File) {
                 }
                 // Create an instance of the Configuration class
                 val configuration = it.getAnnotation(Configuration::class.java)
-                // Check if the configuration on has the alt and the alt  is not empty and the configuration does not contain the name
+                // Check if the configuration on has the alt and the alt, is not empty and the configuration does not contain the name
                 if (cfg.has(configuration.alt) && configuration.alt.isNotEmpty() && !cfg.has(it.name)) {
                     // Check if the configuration contains the alt of the annotation
-                    if (cfg[configuration.alt].asJsonObject.has(configuration.alt))
-                    // Add to the config
+                    if (cfg[configuration.alt].asJsonObject.has(configuration.alt)) {
                         cfg.add(it.name, cfg[configuration.alt].asJsonObject[configuration.alt])
+                    }
                 }
                 // Check if the config contains the name of the variable
                 if (cfg.has(it.name)) {
@@ -36,7 +36,7 @@ class ConfigHandler(private val file: File) {
                         // Set the variable to the name from the json .
                         it[config] = gson.fromJson(cfg[it.name], it.type)
                     } catch (e: Exception) {
-                        error("Config Opts cannot be final!")
+                        error("Config options cannot be final!")
                     }
                 }
             }
@@ -57,7 +57,6 @@ class ConfigHandler(private val file: File) {
 
     fun save() {
         configObjs.forEach { loadConfigurationToJsonFile(it) }
-        //  If the file doesn't exist create a new file
         if (!file.exists()) {
             file.createNewFile()
         }
@@ -67,7 +66,7 @@ class ConfigHandler(private val file: File) {
     }
 
     init {
-        // If  the file exists set the current loaded configuration file
+        // If the file exists set the current loaded configuration file
         // to the config file else create a new one with the output of "{}"
         if (file.exists()) {
             cfg = JsonParser.parseString(file.let { it.readText() }).asJsonObject
@@ -76,7 +75,6 @@ class ConfigHandler(private val file: File) {
         }
     }
 }
-
 
 // Create a superclass for Configs. May be extended later
 open class Config
