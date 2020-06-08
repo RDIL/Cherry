@@ -1,10 +1,26 @@
 pluginManagement {
     repositories {
-        jcenter()
         maven {
-            url 'https://maven.fabricmc.net/'
+            url "https://maven.fabricmc.net/"
         }
         gradlePluginPortal()
+        mavenCentral()
     }
 }
+
+ext.isCiServer = System.getenv().containsKey("CIRRUS_CI")
+ext.isMasterBranch = System.getenv()["CIRRUS_BRANCH"] == "master"
+ext.buildCacheHost = System.getenv().getOrDefault("CIRRUS_HTTP_CACHE_HOST", "localhost:12321")
+
+buildCache {
+    local {
+        enabled = !isCiServer
+    }
+    remote(HttpBuildCache) {
+        url = "http://${buildCacheHost}/"
+        enabled = isCiServer
+        push = isMasterBranch
+    }
+}
+
 rootProject.name = "Cherry"

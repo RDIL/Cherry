@@ -1,12 +1,18 @@
 package rocks.rdil.cherry;
 
+import java.io.File;
+
 import net.fabricmc.api.ModInitializer;
+import rocks.rdil.cherry.config.CherryOptions;
+import rocks.rdil.simpleconfig.ConfigHandler;
 
 /**
  * Starts the client.
  */
 public final class Startup implements ModInitializer {
+    public static Startup instance;
     private static boolean initialized;
+    public ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
 
     @Override
     public void onInitialize() {
@@ -15,5 +21,8 @@ public final class Startup implements ModInitializer {
         }
 
         initialized = true;
+        instance = this;
+
+        configHandler.register(CherryOptions.INSTANCE);
     }
 }

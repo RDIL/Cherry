@@ -9,7 +9,8 @@
     "MixinTutorialManager",
     "MixinConnectScreen",
     "MixinClientBrandRetriever",
-    "MixinGameMenuScreen"
+    "MixinGameMenuScreen",
+    "MixinCrashReport"
   ],
   "injectors": {
     "defaultRequire": 1
