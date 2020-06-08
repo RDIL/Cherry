@@ -10,7 +10,9 @@ import rocks.rdil.simpleconfig.ConfigHandler;
  * Starts the client.
  */
 public final class Startup implements ModInitializer {
+    public static Startup instance;
     private static boolean initialized;
+    public ConfigHandler configHandler = new ConfgHandler(new File("cherry-config.json"));
 
     @Override
     public void onInitialize() {
@@ -19,8 +21,8 @@ public final class Startup implements ModInitializer {
         }
 
         initialized = true;
+        instance = this;
 
-        ConfigHandler configHandler = new ConfgHandler(new File("cherry-config.json"));
         configHandler.register(CherryOptions.INSTANCE);
     }
 }

@@ -14,7 +14,7 @@ class ConfigHandler(private val file: File) {
 
     fun register(config: Config) {
         configObjs.add(config)
-        // Filter through all the fields and check if  the Configuration annotation is present.
+        // Filter through all the fields and check if the Configuration annotation is present.
         config.javaClass.declaredFields
             .filter { it.isAnnotationPresent(Configuration::class.java) }
             .forEach {
@@ -30,10 +30,9 @@ class ConfigHandler(private val file: File) {
                         cfg.add(it.name, cfg[configuration.alt].asJsonObject[configuration.alt])
                     }
                 }
-                // Check if the config contains the name of the variable
                 if (cfg.has(it.name)) {
                     try {
-                        // Set the variable to the name from the json .
+                        // Set the variable to the name from the json
                         it[config] = gson.fromJson(cfg[it.name], it.type)
                     } catch (e: Exception) {
                         error("Config options cannot be final!")
@@ -43,7 +42,6 @@ class ConfigHandler(private val file: File) {
     }
 
     private fun loadConfigurationToJsonFile(config: Config) {
-        // Filter through all the declared fields and check if the Configuration annotation is present.
         config.javaClass.declaredFields
             .filter { it.isAnnotationPresent(Configuration::class.java) }
             .forEach {
@@ -61,13 +59,10 @@ class ConfigHandler(private val file: File) {
             file.createNewFile()
         }
 
-        // Write a new file
         file.let { it.writeText(gson.toJson(cfg)) }
     }
 
     init {
-        // If the file exists set the current loaded configuration file
-        // to the config file else create a new one with the output of "{}"
         if (file.exists()) {
             cfg = JsonParser.parseString(file.let { it.readText() }).asJsonObject
         } else {
@@ -76,5 +71,4 @@ class ConfigHandler(private val file: File) {
     }
 }
 
-// Create a superclass for Configs. May be extended later
 open class Config
