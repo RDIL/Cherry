@@ -3,6 +3,8 @@ package rocks.rdil.cherry.config;
 import rocks.rdil.simpleconfig.Configuration;
 
 public class CherryOptions {
-    @Configuration private boolean toggleSprint;
-    @Configuration private boolean enableTutorialPopups;
+    public static final CherryOptions INSTANCE = new CherryOptions();
+
+    @Configuration public boolean toggleSprint;
+    @Configuration public boolean enableTutorialPopups;
 }

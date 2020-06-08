@@ -3,7 +3,7 @@ package rocks.rdil.cherry.events;
 import lombok.NoArgsConstructor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
-import rocks.rdil.cherry.config.ConfigManager;
+import rocks.rdil.cherry.config.CherryOptions;
 
 @NoArgsConstructor
 public class RunTickCallback implements ICallback {
@@ -17,7 +17,7 @@ public class RunTickCallback implements ICallback {
             return;
         }
 
-        if (player.forwardSpeed > 0 && ConfigManager.instance.config.getToggleSprint().equals("true")) {
+        if (player.forwardSpeed > 0 && CherryOptions.INSTANCE.toggleSprint) {
             player.setSprinting(true);
         }
     }
