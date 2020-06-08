@@ -3,6 +3,8 @@ package rocks.rdil.cherry.events;
 import lombok.NoArgsConstructor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import rocks.rdil.cherry.config.CherryOptions;
 
 @NoArgsConstructor
@@ -19,6 +21,11 @@ public class RunTickCallback implements ICallback {
 
         if (player.forwardSpeed > 0 && CherryOptions.INSTANCE.toggleSprint) {
             player.setSprinting(true);
+        }
+
+        // todo: implement with config
+        if (false) {
+            MinecraftClient.getInstance().player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 16360, 0, false, false));
         }
     }
 }
