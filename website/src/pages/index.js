@@ -50,7 +50,7 @@ function Feature({ title, description }) {
 function Home() {
   return (
     <Layout
-      title={`Welcome`}
+      title={"Welcome"}
       description="Welcome to Cherry, a utility Minecraft (legit) client for 1.14.4, built off Fabric with love."
     >
       <header className={classnames("hero hero--primary", styles.heroBanner)}>

@@ -79,8 +79,8 @@ module.exports = {
           feedOptions: {
             type: "all",
             copyright: "Copyright (c) 2020 Reece Dunham.",
-            language: "en-US"
-          }
+            language: "en-US",
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -88,7 +88,7 @@ module.exports = {
         sitemap: {
           cacheTime: 600 * 1000,
           changefreq: "weekly",
-          priority: 0.5
+          priority: 0.5,
         },
       },
     ],
