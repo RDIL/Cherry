@@ -1,3 +1,5 @@
+image: rdilpickle/better-wsfull:latest
+
 vscode:
   extensions:
     - GabrielBB.vscode-lombok@1.0.1:IAvPOHnFmUYZpRqErUNAiQ==
