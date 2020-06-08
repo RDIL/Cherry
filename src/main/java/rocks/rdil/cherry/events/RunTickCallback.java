@@ -10,6 +10,7 @@ import rocks.rdil.cherry.config.CherryOptions;
 @NoArgsConstructor
 public class RunTickCallback implements ICallback {
     public static final RunTickCallback instance = new RunTickCallback();
+    private boolean hasAppliedNightVision = false;
 
     @Override
     public void run() {
@@ -23,9 +24,11 @@ public class RunTickCallback implements ICallback {
             player.setSprinting(true);
         }
 
-        // todo: implement with config
-        if (false) {
-            MinecraftClient.getInstance().player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 16360, 0, false, false));
+        if (CherryOptions.INSTANCE.fullbright) {
+            player.addStatusEffect(new StatusEffectInstance(StatusEffects.NIGHT_VISION, 16360, 0, false, false));
+        } else if (this.hasAppliedNightVision) {
+            player.removeStatusEffect(StatusEffects.NIGHT_VISION);
+            this.hasAppliedNightVision = false;
         }
     }
 }
