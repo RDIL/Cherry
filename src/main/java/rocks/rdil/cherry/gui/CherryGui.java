@@ -18,6 +18,7 @@ public class CherryGui extends Screen {
         int y = this.height / 6;
         int y2 = y + (this.height / 9);
         int y3 = y2 + (this.height / 9);
+        int y4 = y3 + (this.height / 9);
 
         CherryOptions c = CherryOptions.INSTANCE;
 
@@ -39,9 +40,16 @@ public class CherryGui extends Screen {
             button.setMessage("Fullbright: " + fromConfig(c.fullbright));
         });
 
+        ButtonWidget hideBats = new ButtonWidget(x, y4, 200, 20, "Hide Bats: " + fromConfig(c.hideBats), button -> {
+            c.hideBats = !c.hideBats;
+            Startup.instance.configHandler.save();
+            button.setMessage("Hide Bats: " + fromConfig(c.hideBats));
+        });
+
         this.addButton(toggleSprint);
         this.addButton(enableTutorialPopups);
         this.addButton(fullbright);
+        this.addButton(hideBats);
     }
 
     private String fromConfig(boolean b) {
@@ -55,10 +63,10 @@ public class CherryGui extends Screen {
     }
 
     public static LiteralText getTitleTextComponent() {
-        Style titleStyle = new Style();
-        titleStyle.setBold(true);
-        titleStyle.setUnderline(true);
-        titleStyle.setColor(Formatting.RED);
+        Style titleStyle = new Style()
+            .setBold(true)
+            .setUnderline(true)
+            .setColor(Formatting.RED);
         LiteralText title = new LiteralText("Cherry Client");
         title.setStyle(titleStyle);
         return title;

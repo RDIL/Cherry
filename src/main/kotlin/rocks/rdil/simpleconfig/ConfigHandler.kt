@@ -71,5 +71,3 @@ class ConfigHandler(private val file: File) {
         }
     }
 }
-
-open class Config

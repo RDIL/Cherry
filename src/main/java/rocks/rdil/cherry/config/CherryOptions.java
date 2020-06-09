@@ -9,4 +9,5 @@ public class CherryOptions extends Config {
     @Configuration public boolean toggleSprint = false;
     @Configuration public boolean enableTutorialPopups = true;
     @Configuration public boolean fullbright = false;
+    @Configuration public boolean hideBats = false;
 }

@@ -10,7 +10,8 @@
     "MixinConnectScreen",
     "MixinClientBrandRetriever",
     "MixinGameMenuScreen",
-    "MixinCrashReport"
+    "MixinCrashReport",
+    "MixinEntityRenderer"
   ],
   "injectors": {
     "defaultRequire": 1
