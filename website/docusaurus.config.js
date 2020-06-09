@@ -25,7 +25,7 @@ module.exports = {
         {
           to: "blog",
           label: "Blog",
-          position: "left",
+          position: "right",
         },
         {
           href: "https://github.com/RDIL/Cherry",
@@ -44,7 +44,6 @@ module.exports = {
       "@docusaurus/preset-classic",
       {
         docs: {
-          homePageId: "doc1",
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/RDIL/Cherry/edit/master/website/",
           showLastUpdateTime: true,
