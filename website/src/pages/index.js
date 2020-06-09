@@ -1,7 +1,9 @@
 import React from "react"
-import classnames from "classnames"
+import clsx from "clsx"
 import Layout from "@theme/Layout"
 import styles from "./styles.module.css"
+import Link from "@docusaurus/Link"
+import useBaseUrl from "@docusaurus/useBaseUrl"
 
 const features = [
   {
@@ -40,7 +42,7 @@ const features = [
 
 function Feature({ title, description }) {
   return (
-    <div className={"col col--4"}>
+    <div className="col col--4">
       <h3>{title}</h3>
       <p>{description}</p>
     </div>
@@ -53,7 +55,7 @@ function Home() {
       title={"Welcome"}
       description="Welcome to Cherry, a utility Minecraft (legit) client for 1.14.4, built off Fabric with love."
     >
-      <header className={classnames("hero hero--primary", styles.heroBanner)}>
+      <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Cherry Client</h1>
           <p className="hero__subtitle">
@@ -73,6 +75,14 @@ function Home() {
             </div>
           </section>
         )}
+        <section className={styles.button}>
+          <Link
+            className="button button--primary button--lg"
+            to={useBaseUrl("docs/install/")}
+          >
+            Download
+          </Link>
+        </section>
       </main>
     </Layout>
   )

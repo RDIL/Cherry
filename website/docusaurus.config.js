@@ -12,13 +12,11 @@ module.exports = {
       links: [
         {
           to: "docs/features",
-          activeBasePath: "docs",
           label: "Features",
           position: "left",
         },
         {
           to: "docs/install",
-          activeBasePath: "docs",
           label: "Install",
           position: "left",
         },

@@ -15,3 +15,5 @@ Thank you to Netlify for hosting our website.
 Thank you to [Chachy](https://chachy.club) for his work on the configuration system.
 
 Thank you to [Fabric](https://fabricmc.net) for the great loader and API.
+
+Thank you to [Cirrus CI](https://cirrus-ci.org) for providing CI services.
