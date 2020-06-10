@@ -8,11 +8,10 @@ import net.minecraft.entity.effect.StatusEffects;
 import rocks.rdil.cherry.config.CherryOptions;
 
 @NoArgsConstructor
-public class RunTickCallback implements ICallback {
+public class RunTickCallback {
     public static final RunTickCallback instance = new RunTickCallback();
     private boolean hasAppliedNightVision = false;
 
-    @Override
     public void run() {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
 

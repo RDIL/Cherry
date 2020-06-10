@@ -16,13 +16,11 @@ class ConfigHandler(private val file: File) {
     fun register(config: Config) {
         configObjs.add(config)
         config.javaClass.declaredFields
-                // Filter through all the fields and check if the Configuration annotation is present
                 .filter { it.isAnnotationPresent(Configuration::class.java) }
                 .forEach {
                     if (!it.isAccessible) {
                         it.isAccessible = true
                     }
-                    // Create an instance of the Configuration class
                     val configuration = it.getAnnotation(Configuration::class.java)
                     // Check if the configuration on has the alt and the alt, is not empty and the configuration does not contain the name
                     if (cfg.has(configuration.alt) && configuration.alt.isNotEmpty() && !cfg.has(it.name)) {
@@ -49,7 +47,6 @@ class ConfigHandler(private val file: File) {
                     if (!it.isAccessible) {
                         it.isAccessible = true
                     }
-                    // Add the option to the config
                     cfg.add(it.name, gson.toJsonTree(it[config], it.type))
                 }
     }

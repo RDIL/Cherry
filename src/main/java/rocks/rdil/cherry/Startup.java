@@ -25,4 +25,8 @@ public final class Startup implements ModInitializer {
 
         configHandler.register(CherryOptions.INSTANCE);
     }
+
+    public void saveConfig() {
+        this.configHandler.save();
+    }
 }
