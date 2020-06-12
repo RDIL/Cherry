@@ -2,6 +2,7 @@ package rocks.rdil.cherry;
 
 import java.io.File;
 
+import lombok.NoArgsConstructor;
 import net.fabricmc.api.ModInitializer;
 import rocks.rdil.cherry.config.CherryOptions;
 import rocks.rdil.simpleconfig.ConfigHandler;
@@ -9,6 +10,7 @@ import rocks.rdil.simpleconfig.ConfigHandler;
 /**
  * Starts the client.
  */
+@NoArgsConstructor
 public final class Startup implements ModInitializer {
     public static Startup instance;
     private static boolean initialized;

@@ -10,7 +10,6 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -28,14 +27,10 @@ public final class ConfigHandler {
         return this.cfg;
     }
 
-    public final void setCfg(JsonObject cfg) {
-        this.cfg = cfg;
-    }
-
     public final void register(Config config) {
         this.configObjs.add(config);
         Field[] classFields = config.getClass().getDeclaredFields();
-        Collection<Field> dest = new ArrayList<Field>();
+        Collection<Field> dest = new ArrayList<>();
 
         for (Field f : classFields) {
             if (f.isAnnotationPresent(Configuration.class)) {
@@ -43,11 +38,7 @@ public final class ConfigHandler {
             }
         }
 
-        Iterable<Field> iterable = dest;
-        Iterator<Field> iterator = iterable.iterator();
-
-        while (iterator.hasNext()) {
-            Field it = iterator.next();
+        for (Field it : dest) {
             if (!it.isAccessible()) {
                 it.setAccessible(true);
             }
@@ -73,12 +64,11 @@ public final class ConfigHandler {
         }
     }
 
-    private final void loadConfigurationToJsonFile(Config config) {
+    private void loadConfigurationToJsonFile(Config config) {
         Field[] fields = config.getClass().getDeclaredFields();
-        Collection<Field> dest = new ArrayList<Field>();
+        Collection<Field> dest = new ArrayList<>();
 
-        for (int var9 = 0; var9 < fields.length; ++var9) {
-            Field theField = fields[var9];
+        for (Field theField : fields) {
             if (theField.isAnnotationPresent(Configuration.class)) {
                 dest.add(theField);
             }
@@ -87,7 +77,7 @@ public final class ConfigHandler {
         Field it;
         try {
             for (Iterator<Field> var4 = dest.iterator(); var4.hasNext(); this.cfg.add(it.getName(),
-                    GsonExt.gson.toJsonTree(it.get(config), (Type) it.getType()))) {
+                    GsonExt.gson.toJsonTree(it.get(config), it.getType()))) {
                 it = var4.next();
                 if (!it.isAccessible()) {
                     it.setAccessible(true);
@@ -99,11 +89,7 @@ public final class ConfigHandler {
     }
 
     public final void save() {
-        Iterable<Config> eachConfigObject = this.configObjs;
-        Iterator<Config> eachConfigObjectIter = eachConfigObject.iterator();
-
-        while (eachConfigObjectIter.hasNext()) {
-            Config it = eachConfigObjectIter.next();
+        for (Config it : this.configObjs) {
             this.loadConfigurationToJsonFile(it);
         }
 
@@ -129,7 +115,7 @@ public final class ConfigHandler {
     public ConfigHandler(File file) {
         this.file = file;
         this.cfg = new JsonObject();
-        this.configObjs = new ArrayList<Config>();
+        this.configObjs = new ArrayList<>();
         try {
             if (this.file.exists()) {
                 StringBuilder builder = new StringBuilder();
