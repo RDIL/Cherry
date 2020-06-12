@@ -1,17 +1,31 @@
 package rocks.rdil.cherry.gui.widgets;
 
-import lombok.NoArgsConstructor;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawableHelper;
+import rocks.rdil.cherry.config.CherryOptions;
 
-@NoArgsConstructor
-public class FpsWidget {
-    public void render(DrawableHelper s, int x, int y) {
-        if (!MinecraftClient.isHudEnabled()) {
-            return;
-        }
+public class FpsWidget extends Widget {
+    @Override
+    public String getPrefix() {
+        return "FPS";
+    }
 
-        String st = "FPS: " + MinecraftClient.getCurrentFps();
-        s.drawCenteredString(MinecraftClient.getInstance().textRenderer, st, x, y, 16777215);
+    @Override
+    public String getSuffix() {
+        return String.valueOf(MinecraftClient.getCurrentFps());
+    }
+
+    @Override
+    public int getConfigX() {
+        return CherryOptions.INSTANCE.fpsWidgetX;
+    }
+
+    @Override
+    public int getConfigY() {
+        return CherryOptions.INSTANCE.fpsWidgetY;
+    }
+
+    @Override
+    public boolean getEnabled() {
+        return CherryOptions.INSTANCE.fpsWidgetEnabled;
     }
 }

@@ -13,6 +13,6 @@ public class RenderHudCallback {
     }
 
     public void run(DrawableHelper hud) {
-        this.fpsWidget.render(hud, 100, 100);
+        this.fpsWidget.render(hud);
     }
 }
