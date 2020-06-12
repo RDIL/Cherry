@@ -1,10 +1,7 @@
 package rocks.rdil.cherry.gui.widgets;
 
-import java.lang.reflect.Field;
-
 import lombok.NoArgsConstructor;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
 
 @NoArgsConstructor
@@ -15,6 +12,6 @@ public class FpsWidget {
         }
 
         String st = "FPS: " + MinecraftClient.getCurrentFps();
-        s.drawCenteredString(FontUtil.INSTANCE.getFont(), st, x, y, 16777215);
+        s.drawCenteredString(MinecraftClient.getInstance().textRenderer, st, x, y, 16777215);
     }
 }

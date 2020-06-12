@@ -67,8 +67,6 @@ public class CherryGui extends Screen {
             .setBold(true)
             .setUnderline(true)
             .setColor(Formatting.RED);
-        LiteralText title = new LiteralText("Cherry Client");
-        title.setStyle(titleStyle);
-        return title;
+        return (LiteralText) new LiteralText("Cherry Client").setStyle(titleStyle);
     }
 }
