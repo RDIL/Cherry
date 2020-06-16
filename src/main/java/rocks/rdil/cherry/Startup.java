@@ -12,9 +12,9 @@ import rocks.rdil.simpleconfig.ConfigHandler;
  */
 @NoArgsConstructor
 public final class Startup implements ModInitializer {
+    public ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
     public static Startup instance;
     private static boolean initialized;
-    public ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
 
     @Override
     public void onInitialize() {

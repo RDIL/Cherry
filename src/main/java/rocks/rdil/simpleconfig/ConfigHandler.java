@@ -44,7 +44,6 @@ public final class ConfigHandler {
             }
 
             Configuration conf = it.getAnnotation(Configuration.class);
-            // TODO can we remove this?
             if (this.cfg.has(conf.alt())) {
                 if (conf.alt().length() > 0 && !this.cfg.has(it.getName())) {
                     JsonElement var22 = this.cfg.get(conf.alt());
