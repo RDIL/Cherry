@@ -12,6 +12,10 @@ public class CherryGui extends Screen {
         super(getTitleTextComponent());
     }
 
+    public static String fromConfig(boolean b) {
+        return b ? "Enabled" : "Disabled";
+    }
+
     protected void init() {
         final int x = this.width / 2 - 100;
         int y = this.height / 7;

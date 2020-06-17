@@ -9,6 +9,8 @@ import net.minecraft.util.Formatting;
 import rocks.rdil.cherry.Startup;
 import rocks.rdil.cherry.config.CherryOptions;
 
+import static rocks.rdil.cherry.gui.CherryGui.fromConfig;
+
 public class FpsWidgetSettings extends Screen {
     private final Screen parent;
 
@@ -59,10 +61,6 @@ public class FpsWidgetSettings extends Screen {
         this.addButton(moveDown);
         this.addButton(moveUp);
         this.addButton(enabled);
-    }
-
-    private String fromConfig(boolean b) {
-        return b ? "Enabled" : "Disabled";
     }
 
     public void render(int mouseX, int mouseY, float delta) {

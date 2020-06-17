@@ -16,4 +16,5 @@ public class CherryOptions extends Config {
     @Configuration public boolean fpsWidgetEnabled = false;
     @Configuration public int fpsWidgetX = 0;
     @Configuration public int fpsWidgetY = 0;
+    @Configuration public boolean enableBossbar = true;
 }

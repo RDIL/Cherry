@@ -5,14 +5,15 @@
   "mixins": [
   ],
   "client": [
-    "MixinClientPlayerEntity",
-    "MixinTutorialManager",
-    "MixinConnectScreen",
+    "MixinBossBarHud",
     "MixinClientBrandRetriever",
-    "MixinGameMenuScreen",
+    "MixinClientPlayerEntity",
+    "MixinConnectScreen",
     "MixinCrashReport",
     "MixinEntityRenderer",
-    "MixinInGameHud"
+    "MixinGameMenuScreen",
+    "MixinInGameHud",
+    "MixinTutorialManager"
   ],
   "injectors": {
     "defaultRequire": 1

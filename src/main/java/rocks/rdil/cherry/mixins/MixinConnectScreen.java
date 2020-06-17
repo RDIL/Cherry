@@ -15,7 +15,7 @@ public abstract class MixinConnectScreen extends Screen {
     }
 
     private int spinnerFrame = 0;
-    public Text status = new TranslatableText("connect.connecting", new Object[0]);
+    public Text status = new TranslatableText("connect.connecting");
 
     /**
      * Render the screen.

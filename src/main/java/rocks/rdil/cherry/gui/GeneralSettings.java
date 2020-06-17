@@ -9,6 +9,8 @@ import net.minecraft.util.Formatting;
 import rocks.rdil.cherry.Startup;
 import rocks.rdil.cherry.config.CherryOptions;
 
+import static rocks.rdil.cherry.gui.CherryGui.fromConfig;
+
 public class GeneralSettings extends Screen {
     private final Screen parent;
 
@@ -23,6 +25,7 @@ public class GeneralSettings extends Screen {
         int y2 = y + (this.height / 10);
         int y3 = y2 + (this.height / 10);
         int y4 = y3 + (this.height / 10);
+        int y5 = y4 + (this.height / 10);
 
         CherryOptions c = CherryOptions.INSTANCE;
 
@@ -52,15 +55,18 @@ public class GeneralSettings extends Screen {
             button.setMessage("Hide Bats: " + fromConfig(c.hideBats));
         });
 
+        ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, "Enable BossBar: " + fromConfig(c.enableBossbar), button -> {
+            c.enableBossbar = !c.enableBossbar;
+            Startup.instance.saveConfig();
+            button.setMessage("Enable BossBar: " + fromConfig(c.hideBats));
+        });
+
         this.addButton(back);
         this.addButton(toggleSprint);
         this.addButton(enableTutorialPopups);
         this.addButton(fullbright);
         this.addButton(hideBats);
-    }
-
-    private String fromConfig(boolean b) {
-        return b ? "Enabled" : "Disabled";
+        this.addButton(bossbarEnabled);
     }
 
     public void render(int mouseX, int mouseY, float delta) {
