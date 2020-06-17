@@ -9,7 +9,7 @@ import rocks.rdil.cherry.config.CherryOptions;
 
 @Mixin(BossBarHud.class)
 public class MixinBossBarHud {
-    @Inject(at = @At(value = "HEAD"), method = "render")
+    @Inject(at = @At(value = "HEAD"), method = "render", cancellable = true)
     public void render(CallbackInfo ci) {
         if (!CherryOptions.INSTANCE.enableBossbar) {
             ci.cancel();

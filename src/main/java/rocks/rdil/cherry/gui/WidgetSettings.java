@@ -23,20 +23,23 @@ public class WidgetSettings extends Screen {
         final int x = this.width / 2 - 100;
         int y = this.height / 7;
         int y2 = y + (this.height / 10);
+        int y3 = y2 + (this.height / 10);
 
         ButtonWidget back = new ButtonWidget(20, 20, 60, 20, "<-- Back", button -> MinecraftClient.getInstance().openScreen(this.parent));
 
         ButtonWidget fps = new ButtonWidget(x, y, 200, 20, "FPS Widget", button -> MinecraftClient.getInstance().openScreen(new FpsWidgetSettings(this)));
+        ButtonWidget potions = new ButtonWidget(x, y2, 200, 20, "Potions Widget", button -> MinecraftClient.getInstance().openScreen(new PotionWidgetSettings(this)));
 
         CherryOptions c = CherryOptions.INSTANCE;
 
-        ButtonWidget squareBrace = new ButtonWidget(x, y2, 200, 20, "Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces), button -> {
+        ButtonWidget squareBrace = new ButtonWidget(x, y3, 200, 20, "Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces), button -> {
             c.widgetsUseSquareBraces = !c.widgetsUseSquareBraces;
             Startup.instance.saveConfig();
             button.setMessage("Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces));
         });
 
         this.addButton(fps);
+        this.addButton(potions);
         this.addButton(squareBrace);
         this.addButton(back);
     }
