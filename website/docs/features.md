@@ -10,3 +10,6 @@ Here is a list of features included in the client:
 - Optionally toggle the game's built-in tutorial (handy if you switch versions a lot)
 - Connecting screen spinner (fun to watch)
 - Fullbright
+- HUD Widgets
+  - FPS Counter
+  - Potion Statuses

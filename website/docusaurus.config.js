@@ -9,6 +9,10 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: "Cherry Client",
+      logo: {
+        alt: "Cherry Logo",
+        src: "logo.png"
+      },
       links: [
         {
           to: "docs/features",
