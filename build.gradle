@@ -8,7 +8,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
 archivesBaseName = "CherryClient"
-version = "1.0.0"
+version = project.mod_version
 group = "rocks.rdil.cherry"
 
 minecraft {}

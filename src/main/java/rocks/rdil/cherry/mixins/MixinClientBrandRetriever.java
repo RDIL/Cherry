@@ -13,6 +13,7 @@ public class MixinClientBrandRetriever {
      * @author Reece Dunham
      * @reason Have it noted in crash reports.
      */
+    @SuppressWarnings("SameReturnValue")
     @Overwrite
     public static String getClientModName() {
         return "Cherry";

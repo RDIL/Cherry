@@ -55,10 +55,10 @@ public class GeneralSettings extends Screen {
             button.setMessage("Hide Bats: " + fromConfig(c.hideBats));
         });
 
-        ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, "Enable BossBar: " + fromConfig(c.enableBossbar), button -> {
+        ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, "BossBar: " + fromConfig(c.enableBossbar), button -> {
             c.enableBossbar = !c.enableBossbar;
             Startup.instance.saveConfig();
-            button.setMessage("Enable BossBar: " + fromConfig(c.hideBats));
+            button.setMessage("BossBar: " + fromConfig(c.hideBats));
         });
 
         this.addButton(back);

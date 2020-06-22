@@ -49,7 +49,7 @@ function Feature({ title, description }) {
   )
 }
 
-function Home() {
+export default () => {
   return (
     <Layout
       title={"Welcome"}
@@ -87,5 +87,3 @@ function Home() {
     </Layout>
   )
 }
-
-export default Home

@@ -6,16 +6,17 @@ import org.spongepowered.asm.mixin.Overwrite;
 import net.minecraft.client.gui.screen.ConnectScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
+import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(ConnectScreen.class)
 public abstract class MixinConnectScreen extends Screen {
+    @SuppressWarnings("unused")
     protected MixinConnectScreen(Text title) {
         super(title);
     }
 
     private int spinnerFrame = 0;
-    public Text status = new TranslatableText("connect.connecting");
+    @Shadow private Text status;
 
     /**
      * Render the screen.

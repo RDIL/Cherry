@@ -7,8 +7,8 @@ import rocks.rdil.cherry.gui.widgets.PotionsWidget;
 public class RenderHudCallback {
     public static final RenderHudCallback INSTANCE = new RenderHudCallback();
 
-    FpsWidget fpsWidget;
-    PotionsWidget potionsWidget;
+    final FpsWidget fpsWidget;
+    final PotionsWidget potionsWidget;
     
     public RenderHudCallback() {
         this.fpsWidget = new FpsWidget();

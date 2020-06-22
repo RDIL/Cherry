@@ -1,5 +1,6 @@
 package rocks.rdil.cherry.mixins;
 
+import net.minecraft.client.MinecraftClient;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,12 +14,13 @@ import rocks.rdil.cherry.gui.CherryGui;
 
 @Mixin(GameMenuScreen.class)
 public class MixinGameMenuScreen extends Screen {
+    @SuppressWarnings("unused")
     protected MixinGameMenuScreen(Text title) {
         super(title);
     }
 
     @Inject(at = @At(value = "RETURN"), method = "initWidgets")
     public void initWidgetsTail(CallbackInfo ci) {
-        this.addButton(new ButtonWidget(10, 10, 100, 20, "Cherry Settings", buttonWidget -> this.minecraft.openScreen(new CherryGui())));
+        this.addButton(new ButtonWidget(10, 10, 100, 20, "Cherry Settings", buttonWidget -> MinecraftClient.getInstance().openScreen(new CherryGui())));
     }
 }
