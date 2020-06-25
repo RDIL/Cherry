@@ -16,6 +16,7 @@ buildCache {
     local {
         enabled = !isCiServer
     }
+
     remote(HttpBuildCache) {
         url = "http://${buildCacheHost}/"
         enabled = isCiServer
