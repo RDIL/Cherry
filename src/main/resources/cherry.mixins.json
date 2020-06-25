@@ -3,7 +3,6 @@
   "package": "rocks.rdil.cherry.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MixinPlayerEntityRenderer"
   ],
   "client": [
     "MixinBossBarHud",
@@ -14,7 +13,7 @@
     "MixinEntityRenderer",
     "MixinGameMenuScreen",
     "MixinInGameHud",
-    "MixinTitleScreen",
+    "MixinPlayerEntityRenderer",
     "MixinTutorialManager"
   ],
   "injectors": {
