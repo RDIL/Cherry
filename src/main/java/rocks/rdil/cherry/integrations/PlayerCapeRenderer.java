@@ -5,9 +5,7 @@ import net.minecraft.client.render.entity.PlayerModelPart;
 import net.minecraft.client.render.entity.feature.FeatureRenderer;
 import net.minecraft.client.render.entity.feature.FeatureRendererContext;
 import net.minecraft.client.render.entity.model.PlayerEntityModel;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
@@ -25,11 +23,11 @@ public class PlayerCapeRenderer extends FeatureRenderer<AbstractClientPlayerEnti
         if (!entitylivingbaseIn.isInvisible() && entitylivingbaseIn.isPartVisible(PlayerModelPart.CAPE) && rl != null) {
             ItemStack itemstack = entitylivingbaseIn.getEquippedStack(EquipmentSlot.CHEST);
             if (itemstack.getItem() != Items.ELYTRA) {
-                float capeFloat = 0.125F;
+                float capeFloat = 0.250F;
                 float capeHeight = 0.0F;
                 if (entitylivingbaseIn.isInSneakingPose()) {
                     capeFloat -= 0.1F;
-                    capeHeight -= 0.05F;
+                    capeHeight += 0.10F;
                 } else {
                     capeFloat -= 0.1F;
                     capeHeight += 0.05F;
@@ -39,12 +37,12 @@ public class PlayerCapeRenderer extends FeatureRenderer<AbstractClientPlayerEnti
                 this.bindTexture(rl);
                 GlStateManager.pushMatrix();
                 GlStateManager.translatef(0.0F, capeHeight, capeFloat);
-                double d0 = MathHelper.lerp((double) partialTicks, entitylivingbaseIn.field_7524, entitylivingbaseIn.field_7500) - MathHelper.lerp((double)partialTicks, entitylivingbaseIn.prevX, entitylivingbaseIn.x);
-                double d1 = MathHelper.lerp((double) partialTicks, entitylivingbaseIn.field_7502, entitylivingbaseIn.field_7521) - MathHelper.lerp((double)partialTicks, entitylivingbaseIn.prevY, entitylivingbaseIn.y);
-                double d2 = MathHelper.lerp((double) partialTicks, entitylivingbaseIn.field_7522, entitylivingbaseIn.field_7499) - MathHelper.lerp((double)partialTicks, entitylivingbaseIn.prevZ, entitylivingbaseIn.z);
+                double d0 = MathHelper.lerp(partialTicks, entitylivingbaseIn.field_7524, entitylivingbaseIn.field_7500) - MathHelper.lerp(partialTicks, entitylivingbaseIn.prevX, entitylivingbaseIn.x);
+                double d1 = MathHelper.lerp(partialTicks, entitylivingbaseIn.field_7502, entitylivingbaseIn.field_7521) - MathHelper.lerp(partialTicks, entitylivingbaseIn.prevY, entitylivingbaseIn.y);
+                double d2 = MathHelper.lerp(partialTicks, entitylivingbaseIn.field_7522, entitylivingbaseIn.field_7499) - MathHelper.lerp(partialTicks, entitylivingbaseIn.prevZ, entitylivingbaseIn.z);
                 float f = entitylivingbaseIn.field_6220 + (entitylivingbaseIn.field_6283 - entitylivingbaseIn.field_6220);
                 double d3 = MathHelper.sin(f * 0.017453292F);
-                double d4 = (double) (-MathHelper.cos(f * 0.017453292F));
+                double d4 = -MathHelper.cos(f * 0.017453292F);
                 float f1 = (float) d1 * 10.0F;
                 f1 = MathHelper.clamp(f1, -6.0F, 32.0F);
                 float f2 = (float) (d0 * d3 + d2 * d4) * 100.0F;
