@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
+import rocks.rdil.cherry.config.CherryOptions;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 
@@ -20,7 +21,7 @@ public class PlayerCapeRenderer extends FeatureRenderer<AbstractClientPlayerEnti
 
     public void render(AbstractClientPlayerEntity entitylivingbaseIn, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale) {
         Identifier rl = new Identifier("2011.png");
-        if (!entitylivingbaseIn.isInvisible() && entitylivingbaseIn.isPartVisible(PlayerModelPart.CAPE) && rl != null) {
+        if (!entitylivingbaseIn.isInvisible() && entitylivingbaseIn.isPartVisible(PlayerModelPart.CAPE) && rl != null && CherryOptions.INSTANCE.enableCape) {
             ItemStack itemstack = entitylivingbaseIn.getEquippedStack(EquipmentSlot.CHEST);
             if (itemstack.getItem() != Items.ELYTRA) {
                 float capeFloat = 0.250F;
