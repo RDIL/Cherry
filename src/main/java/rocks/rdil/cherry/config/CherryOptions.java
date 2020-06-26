@@ -20,4 +20,5 @@ public class CherryOptions extends Config {
     @Configuration public boolean enablePotionsWidget = false;
     @Configuration public int potWidgetX = 0;
     @Configuration public int potWidgetY = 0;
+    @Configuration public boolean enableCape = false;
 }

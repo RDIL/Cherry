@@ -13,7 +13,7 @@
     "MixinEntityRenderer",
     "MixinGameMenuScreen",
     "MixinInGameHud",
-    "MixinTitleScreen",
+    "MixinPlayerEntityRenderer",
     "MixinTutorialManager"
   ],
   "injectors": {
