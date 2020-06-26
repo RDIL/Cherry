@@ -1,6 +1,5 @@
 package rocks.rdil.cherry.gui;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.LiteralText;
@@ -26,8 +25,6 @@ public class FpsWidgetSettings extends Screen {
         int y3 = y2 + (this.height / 10);
 
         CherryOptions c = CherryOptions.INSTANCE;
-
-        ButtonWidget back = new ButtonWidget(20, 20, 60, 20, "<-- Back", button -> MinecraftClient.getInstance().openScreen(this.parent));
 
         ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, fromConfig(c.fpsWidgetEnabled), button -> {
             c.fpsWidgetEnabled = !c.fpsWidgetEnabled;
@@ -55,7 +52,7 @@ public class FpsWidgetSettings extends Screen {
             Startup.instance.saveConfig();
         });
 
-        this.addButton(back);
+        this.addButton(GuiUtil.makeBackButton(parent));
         this.addButton(moveLeft);
         this.addButton(moveRight);
         this.addButton(moveDown);

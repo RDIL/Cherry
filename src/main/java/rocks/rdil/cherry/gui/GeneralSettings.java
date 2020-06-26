@@ -1,6 +1,5 @@
 package rocks.rdil.cherry.gui;
 
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.LiteralText;
@@ -28,8 +27,6 @@ public class GeneralSettings extends Screen {
         int y5 = y4 + (this.height / 10);
 
         CherryOptions c = CherryOptions.INSTANCE;
-
-        ButtonWidget back = new ButtonWidget(20, 20, 60, 20, "<-- Back", button -> MinecraftClient.getInstance().openScreen(this.parent));
 
         ButtonWidget toggleSprint = new ButtonWidget(x, y, 200, 20, "ToggleSprint: " + fromConfig(c.toggleSprint), button -> {
             c.toggleSprint = !c.toggleSprint;
@@ -61,7 +58,7 @@ public class GeneralSettings extends Screen {
             button.setMessage("BossBar: " + fromConfig(c.hideBats));
         });
 
-        this.addButton(back);
+        this.addButton(GuiUtil.makeBackButton(parent));;
         this.addButton(toggleSprint);
         this.addButton(enableTutorialPopups);
         this.addButton(fullbright);

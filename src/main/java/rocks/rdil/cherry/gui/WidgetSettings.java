@@ -25,8 +25,6 @@ public class WidgetSettings extends Screen {
         int y2 = y + (this.height / 10);
         int y3 = y2 + (this.height / 10);
 
-        ButtonWidget back = new ButtonWidget(20, 20, 60, 20, "<-- Back", button -> MinecraftClient.getInstance().openScreen(this.parent));
-
         ButtonWidget fps = new ButtonWidget(x, y, 200, 20, "FPS Widget", button -> MinecraftClient.getInstance().openScreen(new FpsWidgetSettings(this)));
         ButtonWidget potions = new ButtonWidget(x, y2, 200, 20, "Potions Widget", button -> MinecraftClient.getInstance().openScreen(new PotionWidgetSettings(this)));
 
@@ -41,7 +39,7 @@ public class WidgetSettings extends Screen {
         this.addButton(fps);
         this.addButton(potions);
         this.addButton(squareBrace);
-        this.addButton(back);
+        this.addButton(GuiUtil.makeBackButton(parent));
     }
 
     public void render(int mouseX, int mouseY, float delta) {
