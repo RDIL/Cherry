@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
         maven {
+            name "Fabric"
             url "https://maven.fabricmc.net/"
         }
         gradlePluginPortal()
@@ -18,9 +19,9 @@ buildCache {
     }
 
     remote(HttpBuildCache) {
-        url = "http://${buildCacheHost}/"
-        enabled = isCiServer
-        push = isMasterBranch
+        url "http://${buildCacheHost}/"
+        enabled isCiServer
+        push isMasterBranch
     }
 }
 

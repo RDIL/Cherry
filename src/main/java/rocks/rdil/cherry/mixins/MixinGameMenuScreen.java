@@ -14,7 +14,6 @@ import rocks.rdil.cherry.gui.CherryGui;
 
 @Mixin(GameMenuScreen.class)
 public class MixinGameMenuScreen extends Screen {
-    @SuppressWarnings("unused")
     protected MixinGameMenuScreen(Text title) {
         super(title);
     }

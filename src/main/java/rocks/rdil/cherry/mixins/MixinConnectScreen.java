@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ConnectScreen.class)
 public abstract class MixinConnectScreen extends Screen {
-    @SuppressWarnings("unused")
     protected MixinConnectScreen(Text title) {
         super(title);
     }
