@@ -11,12 +11,21 @@ archivesBaseName = "CherryClient"
 version = project.mod_version
 group = "rocks.rdil.cherry"
 
+repositories {
+    maven {
+        name "RDIL java-libs"
+        url "https://rdil.mycloudrepo.io/public/repositories/java-libs/"
+    }
+}
+
 minecraft {}
 
 dependencies {
     minecraft "com.mojang:minecraft:1.14.4"
     mappings "net.fabricmc:yarn:1.14.4+build.18:v2"
     modImplementation "net.fabricmc:fabric-loader:0.8.8+build.202"
+    modImplementation "rocks.rdil:simpleconfig:1.0.1"
+    include "rocks.rdil:simpleconfig:1.0.1"
 }
 
 processResources {
