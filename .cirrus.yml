@@ -1,12 +1,15 @@
 task:
   auto_cancellation: $CIRRUS_BRANCH != 'master' && $CIRRUS_TAG != ''
   container:
-    image: gradle:4.10.3
+    image: gradle:5.6.1
   gradle_cache:
     folder: ~/.gradle/caches
   script: gradle build
-  jar_artifacts:
-    path: ./build/libs/*.jar
+  Oak_artifacts:
+    path: ./Oak/build/libs/*.jar
+    type: application/java-archive
+  Willow_artifacts:
+    path: ./Willow/build/libs/*.jar
     type: application/java-archive
   name: Build Job
   cleanup_before_cache_script: |
