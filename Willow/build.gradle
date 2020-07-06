@@ -7,17 +7,17 @@ plugins {
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-ext.edition = "Oak"
+ext.edition = "Willow"
 
 archivesBaseName = "CherryClient-${edition}"
-version = project.mod_version
+version = rootProject.mod_version
 group = "rocks.rdil.cherry"
 
 minecraft {}
 
 dependencies {
-    minecraft "com.mojang:minecraft:1.14.4"
-    mappings "net.fabricmc:yarn:1.14.4+build.18:v2"
+    minecraft "com.mojang:minecraft:1.15.2"
+    mappings "net.fabricmc:yarn:1.15.2+build.17:v2"
     modImplementation "net.fabricmc:fabric-loader:0.8.8+build.202"
     modImplementation "rocks.rdil:simpleconfig:1.0.1"
     include "rocks.rdil:simpleconfig:1.0.1"

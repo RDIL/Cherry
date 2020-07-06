@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "rocks.rdil.cherry.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "IMixinMinecraftClient",
+    "MixinBossBarHud",
+    "MixinClientBrandRetriever",
+    "MixinClientPlayerEntity",
+    "MixinConnectScreen",
+    "MixinCrashReport",
+    "MixinEntityRenderer",
+    "MixinGameMenuScreen",
+    "MixinInGameHud",
+    "MixinTutorialManager"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "verbose": true
+}
