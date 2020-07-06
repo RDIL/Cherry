@@ -38,6 +38,14 @@ const features = [
       </>
     ),
   },
+  {
+    title: <>Multiple Minecraft Versions</>,
+    description: (
+      <>
+        Cherry supports several Minecraft versions, including 1.14.4, and 1.15.2!
+      </>
+    ),
+  },
 ]
 
 function Feature({ title, description }) {
@@ -53,7 +61,7 @@ export default () => {
   return (
     <Layout
       title={"Welcome"}
-      description="Welcome to Cherry, a utility Minecraft (legit) client for 1.14.4, built off Fabric with love."
+      description="Welcome to Cherry, a utility Minecraft (legit) client, built off Fabric with love."
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">

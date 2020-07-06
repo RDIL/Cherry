@@ -13,3 +13,5 @@ Here is a list of features included in the client:
 - HUD Widgets
   - FPS Counter
   - Potion Statuses
+
+Feel free to suggest more!

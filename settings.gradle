@@ -26,3 +26,6 @@ buildCache {
 }
 
 rootProject.name = "Cherry"
+
+include "Oak"
+include "Willow"

@@ -1,6 +1,6 @@
 module.exports = {
   title: "Cherry Client",
-  tagline: "The Cherry Minecraft 1.14.4 client!",
+  tagline: "The Cherry Minecraft client!",
   url: "https://cherry.rdil.rocks",
   baseUrl: "/",
   favicon: "",
