@@ -8,9 +8,9 @@ Here are all the previous releases and their changelogs.
 
 ## v1.0.0
 
-:::info Download
+:::warn No longer downloadable
 
-https://rdil.mycloudrepo.io/public/repositories/cherry-libs/CherryClient-1.0.0.jar
+Starting in v1.1.0, we have split Cherry into different Minecraft versions. Because this release did not support the structure, it can't be downloaded anymore.
 
 :::
 

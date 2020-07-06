@@ -2,7 +2,8 @@ package rocks.rdil.cherry.gui.widgets;
 
 import net.minecraft.client.MinecraftClient;
 import rocks.rdil.cherry.config.CherryOptions;
-import rocks.rdil.cherry.mixins.IMixinMinecraftClient;
+
+import java.lang.reflect.Field;
 
 public class FpsWidget extends Widget {
     @Override
@@ -12,7 +13,19 @@ public class FpsWidget extends Widget {
 
     @Override
     public String getSuffix() {
-        return String.valueOf(IMixinMinecraftClient.currentFps());
+        int fps = 0;
+
+        try {
+            Field f = MinecraftClient.getInstance().getClass().getDeclaredField("currentFps");
+            if (!f.isAccessible()) {
+                f.setAccessible(true);
+            }
+            fps = f.getInt(MinecraftClient.getInstance());
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return String.valueOf(fps);
     }
 
     @Override

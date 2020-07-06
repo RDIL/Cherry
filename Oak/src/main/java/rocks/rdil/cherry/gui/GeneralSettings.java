@@ -58,19 +58,12 @@ public class GeneralSettings extends Screen {
             button.setMessage("BossBar: " + fromConfig(c.hideBats));
         });
 
-        ButtonWidget capes = new ButtonWidget(x, y5, 200, 20, "[ALPHA] Capes: " + fromConfig(c.enableCape), button -> {
-            c.enableBossbar = !c.enableCape;
-            Startup.instance.saveConfig();
-            button.setMessage("[ALPHA] Capes: " + fromConfig(c.enableCape));
-        });
-
-        this.addButton(GuiUtil.makeBackButton(parent));;
+        this.addButton(GuiUtil.makeBackButton(parent));
         this.addButton(toggleSprint);
         this.addButton(enableTutorialPopups);
         this.addButton(fullbright);
         this.addButton(hideBats);
         this.addButton(bossbarEnabled);
-        this.addButton(capes);
     }
 
     public void render(int mouseX, int mouseY, float delta) {
