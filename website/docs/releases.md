@@ -6,13 +6,22 @@ description: An archive of previous releases with changelogs.
 
 Here are all the previous releases and their changelogs.
 
+## v1.1.0
+
+### Oak
+
+```diff
+- Removed capes to simplify split
+* Use simpleconfig from Maven
+```
+
+### Willow
+
+```diff
++ Add Willow
+```
+
 ## v1.0.0
-
-:::warn No longer downloadable
-
-Starting in v1.1.0, we have split Cherry into different Minecraft versions. Because this release did not support the structure, it can't be downloaded anymore.
-
-:::
 
 ### Changelog
 

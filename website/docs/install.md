@@ -19,9 +19,9 @@ All Cherry releases are split into categories based on codenames, which include 
 
 **Next**, Download Cherry. Choose a version:
 
-[*Oak* (Minecraft 1.14.4)]()
+[*Oak* (Minecraft 1.14.4)](https://cdn.rdil.rocks/cherry-releases/oak/CherryClient-Oak-1.1.0.jar)
 
-[*Willow* (Minecraft 1.15.2)]()
+[*Willow* (Minecraft 1.15.2)](https://cdn.rdil.rocks/cherry-releases/willow/CherryClient-Willow-1.1.0.jar)
 
 **Lastly**, add the downloaded Cherry jar file to your `.minecraft/mods` folder. Launch your game with the Fabric loader profile, and Cherry should launch!
 
