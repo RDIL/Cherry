@@ -15,7 +15,7 @@ All Cherry releases are split into categories based on codenames, which include 
 
 :::
 
-**First**, Download Fabric loader. Head [here](https://fabricmc.net/use), click Download Installer, run the installer, and install the profile for Minecraft 1.14.4.
+**First**, Download Fabric loader. Head [here](https://fabricmc.net/use), click Download Installer, run the installer, and install the profile for the Minecraft version that you want (must match the Cherry Minecraft version).
 
 **Next**, Download Cherry. Choose a version:
 
