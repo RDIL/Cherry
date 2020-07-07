@@ -15,6 +15,13 @@ group = "rocks.rdil.cherry"
 
 minecraft {}
 
+repositories {
+    maven {
+        name "RDIL java-libs"
+        url "https://rdil.mycloudrepo.io/public/repositories/java-libs/"
+    }
+}
+
 dependencies {
     minecraft "com.mojang:minecraft:1.15.2"
     mappings "net.fabricmc:yarn:1.15.2+build.17:v2"

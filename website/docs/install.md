@@ -27,4 +27,18 @@ All Cherry releases are split into categories based on codenames, which include 
 
 ## Adding OptiFine
 
-Todo: fix this when releasing 1.1.0
+To add OptiFine, you will need to follow these steps.
+
+### Oak
+
+On Oak, you just need to download the Jar files in [this folder](https://cdn.rdil.rocks/cherry-releases/oak/optifine-support/) and put them in your mods folder along with Cherry.
+
+### Willow
+
+OptiFine *doesn't support Minecraft 1.15.2*.
+
+:::success Alternative Option
+
+A good alternative is [Sodium](https://github.com/jellysquid3/sodium-fabric), which is proven to provide much better performance improvements than OptiFine.
+
+:::

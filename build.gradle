@@ -3,13 +3,6 @@ plugins {
 }
 
 subprojects {
-    repositories {
-        maven {
-            name "RDIL java-libs"
-            url "https://rdil.mycloudrepo.io/public/repositories/java-libs/"
-        }
-    }
-
     jar {
         from "../LICENSE"
     }

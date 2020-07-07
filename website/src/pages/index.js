@@ -67,7 +67,7 @@ export default () => {
         <div className="container">
           <h1 className="hero__title">Cherry Client</h1>
           <p className="hero__subtitle">
-            The Cherry Minecraft client for 1.14.4!
+            A utility Minecraft client!
           </p>
         </div>
       </header>
