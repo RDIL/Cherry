@@ -1,0 +1,52 @@
+plugins {
+    id "java"
+    id "io.franzbecker.gradle-lombok" version "4.0.0"
+    id "fabric-loom" version "0.4-SNAPSHOT"
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+ext.edition = "Maple"
+
+archivesBaseName = "CherryClient-${edition}"
+version = rootProject.mod_version
+group = "rocks.rdil.cherry"
+
+minecraft {}
+
+repositories {
+    maven {
+        name "RDIL java-libs"
+        url "https://rdil.mycloudrepo.io/public/repositories/java-libs/"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:20w14infinite"
+    mappings "net.fabricmc:yarn:20w14infinite+build.4:v2"
+    modImplementation "net.fabricmc:fabric-loader:0.8.9+build.203"
+    modImplementation "rocks.rdil:simpleconfig:1.0.1"
+    include "rocks.rdil:simpleconfig:1.0.1"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include "fabric.mod.json"
+        expand "version": project.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude "fabric.mod.json"
+    }
+}
+
+task deleteDevJar(type: Delete) {
+    delete "build/libs/CherryClient-${edition}-${project.version}-dev.jar"
+}
+
+if (System.getenv("CI") != null) {
+    build.finalizedBy(deleteDevJar)
+}
