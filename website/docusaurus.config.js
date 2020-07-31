@@ -3,7 +3,7 @@ module.exports = {
   tagline: "The Cherry Minecraft client!",
   url: "https://cherry.rdil.rocks",
   baseUrl: "/",
-  favicon: "",
+  favicon: null,
   organizationName: "RDIL",
   projectName: "Cherry",
   themeConfig: {
