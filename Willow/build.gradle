@@ -25,7 +25,7 @@ repositories {
 dependencies {
     minecraft "com.mojang:minecraft:1.15.2"
     mappings "net.fabricmc:yarn:1.15.2+build.17:v2"
-    modImplementation "net.fabricmc:fabric-loader:0.8.9+build.203"
+    modImplementation "net.fabricmc:fabric-loader:0.9.1+build.205"
     modImplementation "rocks.rdil:simpleconfig:1.0.1"
     include "rocks.rdil:simpleconfig:1.0.1"
 }
