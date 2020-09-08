@@ -28,28 +28,28 @@ public class PotionWidgetSettings extends Screen {
 
         ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, fromConfig(c.enablePotionsWidget), button -> {
             c.enablePotionsWidget = !c.enablePotionsWidget;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage(fromConfig(c.enablePotionsWidget));
         });
 
         ButtonWidget moveLeft = new ButtonWidget(x - 5, y2, 100, 20, "Move Left", button -> {
             CherryOptions.INSTANCE.potWidgetX -= 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveRight = new ButtonWidget(x + 105, y2, 100, 20, "Move Right", button -> {
             CherryOptions.INSTANCE.potWidgetX += 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveUp = new ButtonWidget(x - 5, y3, 100, 20, "Move Up", button -> {
             CherryOptions.INSTANCE.potWidgetY -= 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveDown = new ButtonWidget(x + 105, y3, 100, 20, "Move Down", button -> {
             CherryOptions.INSTANCE.potWidgetY += 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         this.addButton(GuiUtil.makeBackButton(parent));

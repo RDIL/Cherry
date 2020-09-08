@@ -1,11 +1,11 @@
 package rocks.rdil.cherry.config;
 
-import lombok.NoArgsConstructor;
 import rocks.rdil.simpleconfig.Config;
 import rocks.rdil.simpleconfig.Configuration;
 
-@NoArgsConstructor
 public class CherryOptions extends Config {
+    public CherryOptions() {}
+
     public static final CherryOptions INSTANCE = new CherryOptions();
 
     @Configuration public boolean toggleSprint = false;

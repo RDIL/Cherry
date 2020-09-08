@@ -1,7 +1,6 @@
 plugins {
     id "java"
-    id "io.franzbecker.gradle-lombok" version "4.0.0"
-    id "fabric-loom" version "0.4-SNAPSHOT"
+    id "fabric-loom" version "0.5-SNAPSHOT"
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8

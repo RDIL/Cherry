@@ -2,7 +2,6 @@ package rocks.rdil.cherry;
 
 import java.io.File;
 
-import lombok.NoArgsConstructor;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,12 +11,13 @@ import rocks.rdil.simpleconfig.ConfigHandler;
 /**
  * Starts the client.
  */
-@NoArgsConstructor
 public final class Startup implements ModInitializer {
-    public final ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
-    public static Startup instance;
-    private static boolean initialized;
     public static final Logger LOGGER = LogManager.getLogger("Cherry");
+    public final ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
+    public static Startup INSTANCE;
+    private static boolean initialized;
+
+    public Startup() {}
 
     @Override
     public void onInitialize() {
@@ -26,7 +26,7 @@ public final class Startup implements ModInitializer {
         }
 
         initialized = true;
-        instance = this;
+        INSTANCE = this;
 
         LOGGER.info("Loaded Cherry!");
 

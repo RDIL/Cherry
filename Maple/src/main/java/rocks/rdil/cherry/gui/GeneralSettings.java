@@ -30,31 +30,31 @@ public class GeneralSettings extends Screen {
 
         ButtonWidget toggleSprint = new ButtonWidget(x, y, 200, 20, "ToggleSprint: " + fromConfig(c.toggleSprint), button -> {
             c.toggleSprint = !c.toggleSprint;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage("ToggleSprint: " + fromConfig(c.toggleSprint));
         });
 
         ButtonWidget enableTutorialPopups = new ButtonWidget(x, y2, 200, 20, "Tutorial Popups: " + fromConfig(c.enableTutorialPopups), button -> {
             c.enableTutorialPopups = !c.enableTutorialPopups;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage("Tutorial Popups: " + fromConfig(c.enableTutorialPopups));
         });
 
         ButtonWidget fullbright = new ButtonWidget(x, y3, 200, 20, "Fullbright: " + fromConfig(c.fullbright), button -> {
             c.fullbright = !c.fullbright;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage("Fullbright: " + fromConfig(c.fullbright));
         });
 
         ButtonWidget hideBats = new ButtonWidget(x, y4, 200, 20, "Hide Bats: " + fromConfig(c.hideBats), button -> {
             c.hideBats = !c.hideBats;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage("Hide Bats: " + fromConfig(c.hideBats));
         });
 
         ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, "BossBar: " + fromConfig(c.enableBossbar), button -> {
             c.enableBossbar = !c.enableBossbar;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage("BossBar: " + fromConfig(c.hideBats));
         });
 

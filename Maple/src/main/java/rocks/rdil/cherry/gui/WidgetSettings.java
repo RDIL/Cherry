@@ -32,7 +32,7 @@ public class WidgetSettings extends Screen {
 
         ButtonWidget squareBrace = new ButtonWidget(x, y3, 200, 20, "Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces), button -> {
             c.widgetsUseSquareBraces = !c.widgetsUseSquareBraces;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage("Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces));
         });
 

@@ -12,6 +12,6 @@ import rocks.rdil.cherry.events.RunTickCallback;
 public class MixinClientPlayerEntity {
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;tick()V", ordinal = 0), method = "tick()V")
     private void onTick(CallbackInfo ci) {
-        RunTickCallback.instance.run();
+        RunTickCallback.INSTANCE.run();
     }
 }

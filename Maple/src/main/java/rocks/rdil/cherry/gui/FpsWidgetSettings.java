@@ -28,28 +28,28 @@ public class FpsWidgetSettings extends Screen {
 
         ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, fromConfig(c.fpsWidgetEnabled), button -> {
             c.fpsWidgetEnabled = !c.fpsWidgetEnabled;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
             button.setMessage(fromConfig(c.fpsWidgetEnabled));
         });
 
         ButtonWidget moveLeft = new ButtonWidget(x - 5, y2, 100, 20, "Move Left", button -> {
            CherryOptions.INSTANCE.fpsWidgetX -= 5;
-           Startup.instance.saveConfig();
+           Startup.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveRight = new ButtonWidget(x + 105, y2, 100, 20, "Move Right", button -> {
             CherryOptions.INSTANCE.fpsWidgetX += 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveUp = new ButtonWidget(x - 5, y3, 100, 20, "Move Up", button -> {
             CherryOptions.INSTANCE.fpsWidgetY -= 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveDown = new ButtonWidget(x + 105, y3, 100, 20, "Move Down", button -> {
             CherryOptions.INSTANCE.fpsWidgetY += 5;
-            Startup.instance.saveConfig();
+            Startup.INSTANCE.saveConfig();
         });
 
         this.addButton(GuiUtil.makeBackButton(parent));

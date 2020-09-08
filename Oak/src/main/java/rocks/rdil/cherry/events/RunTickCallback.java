@@ -1,16 +1,16 @@
 package rocks.rdil.cherry.events;
 
-import lombok.NoArgsConstructor;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import rocks.rdil.cherry.config.CherryOptions;
 
-@NoArgsConstructor
 public class RunTickCallback {
-    public static final RunTickCallback instance = new RunTickCallback();
+    public static final RunTickCallback INSTANCE = new RunTickCallback();
     private boolean hasAppliedNightVision = false;
+
+    public RunTickCallback() {}
 
     public void run() {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
