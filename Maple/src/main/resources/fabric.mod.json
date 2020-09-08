@@ -3,7 +3,7 @@
   "id": "cherry",
   "version": "${version}",
   "name": "Cherry Client",
-  "description": "The Cherry Minecraft client for 1.15.2!",
+  "description": "The Cherry Minecraft client for 20w14infinite!",
   "authors": [
     "Reece Dunham"
   ],
@@ -23,7 +23,6 @@
     "cherry.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.4.0",
-    "minecraft": "1.15.2"
+    "fabricloader": ">=0.4.0"
   }
 }
