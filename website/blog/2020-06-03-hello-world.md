@@ -1,5 +1,5 @@
 ---
-id: hello-world
+slug: hello-world
 title: Introducing Cherry Client
 author: Reece Dunham
 author_title: Project Leader

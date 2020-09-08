@@ -19,9 +19,9 @@ All Cherry releases are split into categories based on codenames, which include 
 
 **Next**, Download Cherry. Choose a version:
 
-[*Oak* (Minecraft 1.14.4)](https://cdn.rdil.rocks/cherry-releases/oak/CherryClient-Oak-1.1.0.jar)
+[*Oak* (Minecraft 1.14.4)](https://github.com/RDIL/Cherry/releases/download/1.1.0/CherryClient-Oak-1.1.0.jar)
 
-[*Willow* (Minecraft 1.15.2)](https://cdn.rdil.rocks/cherry-releases/willow/CherryClient-Willow-1.1.0.jar)
+[*Willow* (Minecraft 1.15.2)](https://github.com/RDIL/Cherry/releases/download/1.1.0/CherryClient-Willow-1.1.0.jar)
 
 **Lastly**, add the downloaded Cherry jar file to your `.minecraft/mods` folder. Launch your game with the Fabric loader profile, and Cherry should launch!
 
@@ -31,7 +31,10 @@ To add OptiFine, you will need to follow these steps.
 
 ### Oak
 
-On Oak, you just need to download the Jar files in [this folder](https://cdn.rdil.rocks/cherry-releases/oak/optifine-support/) and put them in your mods folder along with Cherry.
+On Oak, you need to:
+
+1. Download OptiFine from [optifine.net](https://optifine.net), and put it in the mods folder.
+1. Download OptiFabric (which allows OptiFine to run on Fabric) from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/optifabric) (make sure to pick the correct one for your Minecraft version!) and put it in the mods folder.
 
 ### Willow
 
