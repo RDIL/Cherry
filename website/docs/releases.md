@@ -6,6 +6,28 @@ description: An archive of previous releases with changelogs.
 
 Here are all the previous releases and their changelogs.
 
+## v1.2.0
+
+### Oak
+
+```diff
+* Change instance to INSTANCE in codebase
+* Update toolchain
+```
+
+### Willow
+
+```diff
+* Change instance to INSTANCE in codebase
+* Update toolchain
+```
+
+### Maple
+
+```diff
++ Add Maple
+```
+
 ## v1.1.0
 
 ### Oak
