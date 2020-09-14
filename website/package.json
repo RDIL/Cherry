@@ -9,7 +9,7 @@
     "prettier": "prettier --write **/*.{js,css,md}"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.61",
+    "@docusaurus/core": "^2.0.0-alpha.64",
     "@docusaurus/preset-classic": "^2.0.0-alpha.63",
     "clsx": "^1.1.1",
     "react": "^16.13.1",
