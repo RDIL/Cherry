@@ -1,6 +1,6 @@
 module.exports = {
-  title: "Cherry Client",
-  tagline: "The Cherry Minecraft client!",
+  title: "Cherry",
+  tagline: "The Cherry Minecraft utility mod!",
   url: "https://cherry.rdil.rocks",
   baseUrl: "/",
   favicon: "favicon.ico",
@@ -8,7 +8,7 @@ module.exports = {
   projectName: "Cherry",
   themeConfig: {
     navbar: {
-      title: "Cherry Client",
+      title: "Cherry",
       logo: {
         alt: "Cherry Logo",
         src: "logo.png",

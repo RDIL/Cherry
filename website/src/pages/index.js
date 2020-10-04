@@ -23,18 +23,8 @@ const features = [
         <a href="https://fabricmc.net" target="_blank">
           Fabric
         </a>
-        , Cherry is extremely light-weight and fast. We promise you, no lag, no
-        crashes, none of that.
-      </>
-    ),
-  },
-  {
-    title: <>Extensible</>,
-    description: (
-      <>
-        If you want to use Cherry with your own mods, go for it. We have
-        OptiFine support, as well as documentation on adding your own mods in
-        roughly 5 clicks.
+        , Cherry is extremely light-weight and fast. We promise you, no extra
+        lag, no crashes, none of that.
       </>
     ),
   },
@@ -62,12 +52,12 @@ export default () => {
   return (
     <Layout
       title={"Welcome"}
-      description="Welcome to Cherry, a utility Minecraft (legit) client, built off Fabric with love."
+      description="Welcome to Cherry, a utility Minecraft mod, built off Fabric with love."
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">Cherry Client</h1>
-          <p className="hero__subtitle">A utility Minecraft client!</p>
+          <h1 className="hero__title">Cherry</h1>
+          <p className="hero__subtitle">A utility Minecraft mod.</p>
         </div>
       </header>
       <main>
