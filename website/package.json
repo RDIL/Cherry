@@ -6,11 +6,12 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
-    "prettier": "prettier --write **/*.{js,css,md}"
+    "prettier": "prettier --write **/*.{js,css,md}",
+    "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.64",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.64",
+    "@docusaurus/core": "^2.0.0-alpha.65",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.65",
     "clsx": "^1.1.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

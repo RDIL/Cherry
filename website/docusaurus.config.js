@@ -11,7 +11,7 @@ module.exports = {
       title: "Cherry Client",
       logo: {
         alt: "Cherry Logo",
-        src: "logo.png"
+        src: "logo.png",
       },
       items: [
         {
@@ -23,11 +23,6 @@ module.exports = {
           to: "docs/install",
           label: "Install",
           position: "left",
-        },
-        {
-          to: "blog",
-          label: "Blog",
-          position: "right",
         },
         {
           href: "https://github.com/RDIL/Cherry",
@@ -49,15 +44,6 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           editUrl: "https://github.com/RDIL/Cherry/edit/master/website/",
           showLastUpdateTime: true,
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl: "https://github.com/RDIL/Cherry/edit/master/website/blog/",
-          feedOptions: {
-            type: "all",
-            copyright: "Copyright (c) 2020 Reece Dunham.",
-            language: "en-US",
-          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),

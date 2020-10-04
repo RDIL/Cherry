@@ -42,7 +42,8 @@ const features = [
     title: <>Multiple Minecraft Versions</>,
     description: (
       <>
-        Cherry supports several Minecraft versions, including 1.14.4, and 1.15.2!
+        Cherry supports several Minecraft versions, including 1.14.4, and
+        1.15.2!
       </>
     ),
   },
@@ -66,9 +67,7 @@ export default () => {
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">Cherry Client</h1>
-          <p className="hero__subtitle">
-            A utility Minecraft client!
-          </p>
+          <p className="hero__subtitle">A utility Minecraft client!</p>
         </div>
       </header>
       <main>
