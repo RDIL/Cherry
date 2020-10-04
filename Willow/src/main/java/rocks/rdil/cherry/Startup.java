@@ -6,14 +6,14 @@ import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import rocks.rdil.cherry.config.CherryOptions;
-import rocks.rdil.simpleconfig.ConfigHandler;
+import rocks.rdil.simpleconfig.ConfigurationSystem;
 
 /**
  * Starts the client.
  */
 public final class Startup implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("Cherry");
-    public final ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
+    public final ConfigurationSystem configurationSystem = new ConfigurationSystem(new File("cherry-config.json"));
     public static Startup INSTANCE;
     private static boolean initialized;
 
@@ -30,10 +30,10 @@ public final class Startup implements ModInitializer {
 
         LOGGER.info("Loaded Cherry!");
 
-        configHandler.register(CherryOptions.INSTANCE);
+        configurationSystem.register(CherryOptions.INSTANCE);
     }
 
     public void saveConfig() {
-        this.configHandler.save();
+        this.configurationSystem.save();
     }
 }

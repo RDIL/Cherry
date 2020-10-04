@@ -25,8 +25,8 @@ dependencies {
     minecraft "com.mojang:minecraft:20w14infinite"
     mappings "net.fabricmc:yarn:20w14infinite+build.4:v2"
     modImplementation "net.fabricmc:fabric-loader:0.9.3+build.207"
-    modImplementation "rocks.rdil:simpleconfig:1.0.1"
-    include "rocks.rdil:simpleconfig:1.0.1"
+    modImplementation "rocks.rdil:simpleconfig:2.0.0"
+    include "rocks.rdil:simpleconfig:2.0.0"
 }
 
 processResources {

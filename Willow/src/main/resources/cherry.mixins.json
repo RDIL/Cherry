@@ -6,7 +6,6 @@
   ],
   "client": [
     "MixinBossBarHud",
-    "MixinClientBrandRetriever",
     "MixinClientPlayerEntity",
     "MixinConnectScreen",
     "MixinCrashReport",
