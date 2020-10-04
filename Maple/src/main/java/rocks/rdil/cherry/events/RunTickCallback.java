@@ -9,7 +9,7 @@ import rocks.rdil.cherry.config.CherryOptions;
 public class RunTickCallback {
     public RunTickCallback() {}
 
-    public static final RunTickCallback instance = new RunTickCallback();
+    public static final RunTickCallback INSTANCE = new RunTickCallback();
     private boolean hasAppliedNightVision = false;
 
     public void run() {

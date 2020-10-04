@@ -16,6 +16,6 @@ public abstract class MixinCrashReport {
 
 	@Inject(at = @At("RETURN"), method = "fillSystemDetails")
 	private void addCherryDetails(CallbackInfo info) {
-		getSystemDetailsSection().add("Cherry Config", () -> Startup.instance.configHandler.getCfg().toString());
+		getSystemDetailsSection().add("Cherry Config", () -> Startup.INSTANCE.configHandler.getCfg().toString());
 	}
 }

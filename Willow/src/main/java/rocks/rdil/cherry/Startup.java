@@ -14,7 +14,7 @@ import rocks.rdil.simpleconfig.ConfigHandler;
 public final class Startup implements ModInitializer {
     public static final Logger LOGGER = LogManager.getLogger("Cherry");
     public final ConfigHandler configHandler = new ConfigHandler(new File("cherry-config.json"));
-    public static Startup instance;
+    public static Startup INSTANCE;
     private static boolean initialized;
 
     public Startup() {}
@@ -26,7 +26,7 @@ public final class Startup implements ModInitializer {
         }
 
         initialized = true;
-        instance = this;
+        INSTANCE = this;
 
         LOGGER.info("Loaded Cherry!");
 
