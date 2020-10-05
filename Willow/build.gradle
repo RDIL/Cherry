@@ -8,9 +8,9 @@ targetCompatibility = JavaVersion.VERSION_1_8
 
 ext.edition = "Willow"
 
-archivesBaseName = "CherryClient-${edition}"
+archivesBaseName = "Cherry-${edition}"
 version = rootProject.mod_version
-group = "rocks.rdil.cherry"
+group = "rocks.rdil"
 
 minecraft {}
 
@@ -43,7 +43,7 @@ processResources {
 }
 
 task deleteDevJar(type: Delete) {
-    delete "build/libs/CherryClient-${edition}-${project.version}-dev.jar"
+    delete "build/libs/Cherry-${edition}-${project.version}-dev.jar"
 }
 
 if (System.getenv("CI") != null) {
