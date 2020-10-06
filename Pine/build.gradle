@@ -1,0 +1,51 @@
+plugins {
+    id "java"
+    id "fabric-loom" version "0.5-SNAPSHOT"
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+ext.edition = "Pine"
+
+archivesBaseName = "Cherry-${edition}"
+version = rootProject.mod_version
+group = "rocks.rdil"
+
+minecraft {}
+
+repositories {
+    maven {
+        name "RDIL java-libs"
+        url "https://rdil.mycloudrepo.io/public/repositories/java-libs/"
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.16.3"
+    mappings "net.fabricmc:yarn:1.16.3+build.28"
+    modImplementation "net.fabricmc:fabric-loader:0.9.3+build.207"
+    modImplementation "rocks.rdil:simpleconfig:2.0.0"
+    include "rocks.rdil:simpleconfig:2.0.0"
+}
+
+processResources {
+    inputs.property "version", project.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include "fabric.mod.json"
+        expand "version": project.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude "fabric.mod.json"
+    }
+}
+
+task deleteDevJar(type: Delete) {
+    delete "build/libs/Cherry-${edition}-${project.version}-dev.jar"
+}
+
+if (System.getenv("CI") != null) {
+    build.finalizedBy(deleteDevJar)
+}
