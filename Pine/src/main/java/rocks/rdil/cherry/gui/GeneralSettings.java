@@ -4,12 +4,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.Style;
-import net.minecraft.util.Formatting;
 import rocks.rdil.cherry.Startup;
 import rocks.rdil.cherry.config.CherryOptions;
-
-import static rocks.rdil.cherry.gui.CherryGui.fromConfig;
 
 public class GeneralSettings extends Screen {
     private final Screen parent;
@@ -29,34 +25,34 @@ public class GeneralSettings extends Screen {
 
         CherryOptions c = CherryOptions.INSTANCE;
 
-        ButtonWidget toggleSprint = new ButtonWidget(x, y, 200, 20, new LiteralText("ToggleSprint: " + fromConfig(c.toggleSprint)), button -> {
+        ButtonWidget toggleSprint = new ButtonWidget(x, y, 200, 20, new LiteralText("ToggleSprint: " + GuiUtil.fromConfig(c.toggleSprint)), button -> {
             c.toggleSprint = !c.toggleSprint;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("ToggleSprint: " + fromConfig(c.toggleSprint)));
+            button.setMessage(new LiteralText("ToggleSprint: " + GuiUtil.fromConfig(c.toggleSprint)));
         });
 
-        ButtonWidget enableTutorialPopups = new ButtonWidget(x, y2, 200, 20, new LiteralText("Tutorial Popups: " + fromConfig(c.enableTutorialPopups)), button -> {
+        ButtonWidget enableTutorialPopups = new ButtonWidget(x, y2, 200, 20, new LiteralText("Tutorial Popups: " + GuiUtil.fromConfig(c.enableTutorialPopups)), button -> {
             c.enableTutorialPopups = !c.enableTutorialPopups;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("Tutorial Popups: " + fromConfig(c.enableTutorialPopups)));
+            button.setMessage(new LiteralText("Tutorial Popups: " + GuiUtil.fromConfig(c.enableTutorialPopups)));
         });
 
-        ButtonWidget fullbright = new ButtonWidget(x, y3, 200, 20, new LiteralText("Fullbright: " + fromConfig(c.fullbright)), button -> {
+        ButtonWidget fullbright = new ButtonWidget(x, y3, 200, 20, new LiteralText("Fullbright: " + GuiUtil.fromConfig(c.fullbright)), button -> {
             c.fullbright = !c.fullbright;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("Fullbright: " + fromConfig(c.fullbright)));
+            button.setMessage(new LiteralText("Fullbright: " + GuiUtil.fromConfig(c.fullbright)));
         });
 
-        ButtonWidget hideBats = new ButtonWidget(x, y4, 200, 20, new LiteralText("Hide Bats: " + fromConfig(c.hideBats)), button -> {
+        ButtonWidget hideBats = new ButtonWidget(x, y4, 200, 20, new LiteralText("Hide Bats: " + GuiUtil.fromConfig(c.hideBats)), button -> {
             c.hideBats = !c.hideBats;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("Hide Bats: " + fromConfig(c.hideBats)));
+            button.setMessage(new LiteralText("Hide Bats: " + GuiUtil.fromConfig(c.hideBats)));
         });
 
-        ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, new LiteralText("BossBar: " + fromConfig(c.enableBossbar)), button -> {
+        ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, new LiteralText("BossBar: " + GuiUtil.fromConfig(c.enableBossbar)), button -> {
             c.enableBossbar = !c.enableBossbar;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("BossBar: " + fromConfig(c.hideBats)));
+            button.setMessage(new LiteralText("BossBar: " + GuiUtil.fromConfig(c.hideBats)));
         });
 
         this.addButton(GuiUtil.makeBackButton(parent));
@@ -74,9 +70,6 @@ public class GeneralSettings extends Screen {
     }
 
     public static LiteralText getTitleTextComponent() {
-        return (LiteralText) new LiteralText("General Settings").styled(
-                style -> style.withBold(true)
-                        .withUnderline(true)
-                        .withColor(Formatting.RED));
+        return new LiteralText("General Settings");
     }
 }

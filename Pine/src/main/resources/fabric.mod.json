@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "cherry",
   "version": "${version}",
-  "name": "Cherry Client",
-  "description": "The Cherry Minecraft client for 20w14infinite!",
+  "name": "Cherry",
+  "description": "The Cherry Minecraft utility mod for 1.16.3!",
   "authors": [
     "Reece Dunham"
   ],
   "contact": {
-    "homepage": "https://cherry.rdil.rocks/",
+    "homepage": "https://rdil.rocks/cherry/",
     "sources": "https://github.com/RDIL/Cherry/"
   },
   "license": "MIT",
@@ -23,6 +23,7 @@
     "cherry.mixins.json"
   ],
   "depends": {
+    "minecraft": "1.16.3",
     "fabricloader": ">=0.4.0"
   }
 }

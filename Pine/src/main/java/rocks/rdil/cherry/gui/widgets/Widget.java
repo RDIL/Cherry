@@ -24,6 +24,6 @@ public abstract class Widget {
             return;
         }
 
-        DrawableHelper.drawCenteredString(matrixStack,MinecraftClient.getInstance().textRenderer, this.getDisplay(), this.getConfigX(), this.getConfigY(), 16777215);
+        DrawableHelper.drawCenteredString(matrixStack, MinecraftClient.getInstance().textRenderer, this.getDisplay(), this.getConfigX(), this.getConfigY(), 16777215);
     }
 }

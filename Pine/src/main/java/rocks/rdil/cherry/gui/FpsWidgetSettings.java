@@ -4,12 +4,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.Style;
-import net.minecraft.util.Formatting;
 import rocks.rdil.cherry.Startup;
 import rocks.rdil.cherry.config.CherryOptions;
-
-import static rocks.rdil.cherry.gui.CherryGui.fromConfig;
 
 public class FpsWidgetSettings extends Screen {
     private final Screen parent;
@@ -27,10 +23,10 @@ public class FpsWidgetSettings extends Screen {
 
         CherryOptions c = CherryOptions.INSTANCE;
 
-        ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, new LiteralText(fromConfig(c.fpsWidgetEnabled)), button -> {
+        ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, new LiteralText(GuiUtil.fromConfig(c.fpsWidgetEnabled)), button -> {
             c.fpsWidgetEnabled = !c.fpsWidgetEnabled;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText(fromConfig(c.fpsWidgetEnabled)));
+            button.setMessage(new LiteralText(GuiUtil.fromConfig(c.fpsWidgetEnabled)));
         });
 
         ButtonWidget moveLeft = new ButtonWidget(x - 5, y2, 100, 20, new LiteralText("Move Left"), button -> {
@@ -61,16 +57,13 @@ public class FpsWidgetSettings extends Screen {
         this.addButton(enabled);
     }
 
-    public void render(MatrixStack matrixStack,int mouseX, int mouseY, float delta) {
+    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float delta) {
         renderBackground(matrixStack);
         drawCenteredString(matrixStack, this.textRenderer, this.title.asString(), this.width / 2, 20, 16777215);
         super.render(matrixStack, mouseX, mouseY, delta);
     }
 
     public static LiteralText getTitleTextComponent() {
-        return (LiteralText) new LiteralText("FPS Widget").styled(
-                style -> style.withBold(true)
-                        .withUnderline(true)
-                        .withColor(Formatting.RED));
+        return new LiteralText("FPS Widget");
     }
 }

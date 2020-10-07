@@ -4,12 +4,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.Style;
-import net.minecraft.util.Formatting;
 import rocks.rdil.cherry.Startup;
 import rocks.rdil.cherry.config.CherryOptions;
-
-import static rocks.rdil.cherry.gui.CherryGui.fromConfig;
 
 public class PotionWidgetSettings extends Screen {
     private final Screen parent;
@@ -27,10 +23,10 @@ public class PotionWidgetSettings extends Screen {
 
         CherryOptions c = CherryOptions.INSTANCE;
 
-        ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, new LiteralText(fromConfig(c.enablePotionsWidget)), button -> {
+        ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, new LiteralText(GuiUtil.fromConfig(c.enablePotionsWidget)), button -> {
             c.enablePotionsWidget = !c.enablePotionsWidget;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText(fromConfig(c.enablePotionsWidget)));
+            button.setMessage(new LiteralText(GuiUtil.fromConfig(c.enablePotionsWidget)));
         });
 
         ButtonWidget moveLeft = new ButtonWidget(x - 5, y2, 100, 20, new LiteralText("Move Left"), button -> {
@@ -68,9 +64,6 @@ public class PotionWidgetSettings extends Screen {
     }
 
     public static LiteralText getTitleTextComponent() {
-        return (LiteralText) new LiteralText("Potions Widget").styled(
-                style -> style.withBold(true)
-                        .withUnderline(true)
-                        .withColor(Formatting.RED));
+        return new LiteralText("Potions Widget");
     }
 }

@@ -5,12 +5,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.Style;
-import net.minecraft.util.Formatting;
 import rocks.rdil.cherry.Startup;
 import rocks.rdil.cherry.config.CherryOptions;
-
-import static rocks.rdil.cherry.gui.CherryGui.fromConfig;
 
 public class WidgetSettings extends Screen {
     private final Screen parent;
@@ -31,10 +27,10 @@ public class WidgetSettings extends Screen {
 
         CherryOptions c = CherryOptions.INSTANCE;
 
-        ButtonWidget squareBrace = new ButtonWidget(x, y3, 200, 20, new LiteralText("Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces)), button -> {
+        ButtonWidget squareBrace = new ButtonWidget(x, y3, 200, 20, new LiteralText("Use Square Braces: " + GuiUtil.fromConfig(c.widgetsUseSquareBraces)), button -> {
             c.widgetsUseSquareBraces = !c.widgetsUseSquareBraces;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("Use Square Braces: " + fromConfig(c.widgetsUseSquareBraces)));
+            button.setMessage(new LiteralText("Use Square Braces: " + GuiUtil.fromConfig(c.widgetsUseSquareBraces)));
         });
 
         this.addButton(fps);
@@ -50,9 +46,6 @@ public class WidgetSettings extends Screen {
     }
 
     public static LiteralText getTitleTextComponent() {
-        return (LiteralText) new LiteralText("Select a Widget").styled(
-                style -> style.withBold(true)
-                        .withUnderline(true)
-                        .withColor(Formatting.RED));
+        return new LiteralText("Select a Widget");
     }
 }

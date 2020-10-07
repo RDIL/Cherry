@@ -4,18 +4,11 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.boss.BossBar;
 import net.minecraft.text.LiteralText;
-import net.minecraft.text.Style;
-import net.minecraft.util.Formatting;
 
 public class CherryGui extends Screen {
     public CherryGui() {
         super(getTitleTextComponent());
-    }
-
-    public static String fromConfig(boolean b) {
-        return b ? "Enabled" : "Disabled";
     }
 
     protected void init() {
@@ -37,9 +30,6 @@ public class CherryGui extends Screen {
     }
 
     public static LiteralText getTitleTextComponent() {
-        return (LiteralText) new LiteralText("Cherry Client").styled(
-                style -> style.withBold(true)
-                        .withUnderline(true)
-                        .withColor(Formatting.RED));
+        return new LiteralText("Cherry Options");
     }
 }

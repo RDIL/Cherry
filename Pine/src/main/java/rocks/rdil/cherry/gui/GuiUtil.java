@@ -9,4 +9,8 @@ public class GuiUtil {
     public static ButtonWidget makeBackButton(Screen parent) {
         return new ButtonWidget(20, 20, 60, 20, new LiteralText("<-- Back"), button -> MinecraftClient.getInstance().openScreen(parent));
     }
+
+    public static String fromConfig(boolean b) {
+        return b ? "Enabled" : "Disabled";
+    }
 }
