@@ -2,13 +2,13 @@
   "schemaVersion": 1,
   "id": "cherry",
   "version": "${version}",
-  "name": "Cherry Client",
-  "description": "The Cherry Minecraft client for 20w14infinite!",
+  "name": "Cherry",
+  "description": "The Cherry Minecraft utility mod for 20w14infinite!",
   "authors": [
     "Reece Dunham"
   ],
   "contact": {
-    "homepage": "https://cherry.rdil.rocks/",
+    "homepage": "https://rdil.rocks/cherry/",
     "sources": "https://github.com/RDIL/Cherry/"
   },
   "license": "MIT",
