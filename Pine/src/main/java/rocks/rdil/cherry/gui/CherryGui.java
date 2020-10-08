@@ -7,8 +7,11 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
 
 public class CherryGui extends Screen {
-    public CherryGui() {
+    private final Screen parent;
+
+    public CherryGui(Screen parent) {
         super(getTitleTextComponent());
+        this.parent = parent;
     }
 
     protected void init() {
@@ -21,6 +24,7 @@ public class CherryGui extends Screen {
 
         this.addButton(general);
         this.addButton(widgets);
+        this.addButton(GuiUtil.makeBackButton(this.parent));
     }
 
     public void render(MatrixStack matrixStack, int mouseX, int mouseY, float delta) {
@@ -30,6 +34,6 @@ public class CherryGui extends Screen {
     }
 
     public static LiteralText getTitleTextComponent() {
-        return new LiteralText("Cherry Options");
+        return new LiteralText("Cherry Settings");
     }
 }

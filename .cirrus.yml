@@ -14,6 +14,9 @@ task:
   Maple_artifacts:
     path: ./Maple/build/libs/*.jar
     type: application/java-archive
+  Pine_artifacts:
+    path: ./Pine/build/libs/*.jar
+    type: application/java-archive
   name: Build Job
   cleanup_before_cache_script: |
     rm -rf ~/.gradle/caches/$GRADLE_VERSION/ ~/.gradle/caches/transforms-1 ~/.gradle/caches/journal-1

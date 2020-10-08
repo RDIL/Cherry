@@ -52,7 +52,7 @@ public class GeneralSettings extends Screen {
         ButtonWidget bossbarEnabled = new ButtonWidget(x, y5, 200, 20, new LiteralText("BossBar: " + GuiUtil.fromConfig(c.enableBossbar)), button -> {
             c.enableBossbar = !c.enableBossbar;
             Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText("BossBar: " + GuiUtil.fromConfig(c.hideBats)));
+            button.setMessage(new LiteralText("BossBar: " + GuiUtil.fromConfig(c.enableBossbar)));
         });
 
         this.addButton(GuiUtil.makeBackButton(parent));

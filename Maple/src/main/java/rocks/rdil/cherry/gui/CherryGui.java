@@ -8,8 +8,11 @@ import net.minecraft.text.Style;
 import net.minecraft.util.Formatting;
 
 public class CherryGui extends Screen {
-    public CherryGui() {
+    private final Screen parent;
+
+    public CherryGui(Screen parent) {
         super(getTitleTextComponent());
+        this.parent = parent;
     }
 
     public static String fromConfig(boolean b) {
@@ -26,6 +29,7 @@ public class CherryGui extends Screen {
 
         this.addButton(general);
         this.addButton(widgets);
+        this.addButton(GuiUtil.makeBackButton(this.parent));
     }
 
     public void render(int mouseX, int mouseY, float delta) {
@@ -39,6 +43,6 @@ public class CherryGui extends Screen {
                 .setBold(true)
                 .setUnderline(true)
                 .setColor(Formatting.RED);
-        return (LiteralText) new LiteralText("Cherry Client").setStyle(titleStyle);
+        return (LiteralText) new LiteralText("Cherry Settings").setStyle(titleStyle);
     }
 }

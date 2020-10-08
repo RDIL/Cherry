@@ -21,6 +21,6 @@ public class MixinGameMenuScreen extends Screen {
 
     @Inject(at = @At(value = "RETURN"), method = "initWidgets")
     public void initWidgetsTail(CallbackInfo ci) {
-        this.addButton(new ButtonWidget(10, 10, 100, 20, new LiteralText("Cherry Settings"), buttonWidget -> MinecraftClient.getInstance().openScreen(new CherryGui())));
+        this.addButton(new ButtonWidget(10, 10, 100, 20, new LiteralText("Cherry Settings"), buttonWidget -> MinecraftClient.getInstance().openScreen(new CherryGui(this))));
     }
 }
