@@ -4,6 +4,13 @@ task:
     image: gradle:5.6.1
   gradle_cache:
     folder: ~/.gradle/caches
+    fingerprint_script: |
+      cat build.gradle
+      cat Oak/build.gradle
+      cat Willow/build.gradle
+      cat Maple/build.gradle
+      cat Pine/build.gradle
+    reupload_on_changes: true
   script: gradle build
   Oak_artifacts:
     path: ./Oak/build/libs/*.jar
