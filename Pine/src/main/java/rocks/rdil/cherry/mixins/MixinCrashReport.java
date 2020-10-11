@@ -12,10 +12,10 @@ import rocks.rdil.cherry.Startup;
 
 @Mixin(CrashReport.class)
 public abstract class MixinCrashReport {
-	@Shadow public abstract CrashReportSection getSystemDetailsSection();
+    @Shadow public abstract CrashReportSection getSystemDetailsSection();
 
-	@Inject(at = @At("RETURN"), method = "fillSystemDetails")
-	private void addCherryDetails(CallbackInfo info) {
-		getSystemDetailsSection().add("Cherry Config", () -> Startup.INSTANCE.configurationSystem.getJsonObject().toString());
-	}
+    @Inject(at = @At("RETURN"), method = "fillSystemDetails")
+    private void addCherryDetails(CallbackInfo info) {
+        getSystemDetailsSection().add("Cherry Config", () -> Startup.INSTANCE.configurationSystem.getJsonObject().toString());
+    }
 }
