@@ -5,6 +5,7 @@
   "mixins": [
   ],
   "client": [
+    "IMixinMinecraftClient",
     "MixinBossBarHud",
     "MixinClientPlayerEntity",
     "MixinConnectScreen",
