@@ -8,7 +8,6 @@ task:
       cat build.gradle
       cat Oak/build.gradle
       cat Willow/build.gradle
-      cat Maple/build.gradle
       cat Pine/build.gradle
     reupload_on_changes: true
   script: gradle build
@@ -17,9 +16,6 @@ task:
     type: application/java-archive
   Willow_artifacts:
     path: ./Willow/build/libs/*.jar
-    type: application/java-archive
-  Maple_artifacts:
-    path: ./Maple/build/libs/*.jar
     type: application/java-archive
   Pine_artifacts:
     path: ./Pine/build/libs/*.jar
