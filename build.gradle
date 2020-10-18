@@ -3,6 +3,12 @@ plugins {
     id "fabric-loom" version "0.5-SNAPSHOT"
 }
 
+dependencies {
+    // make loom work on rootProject even though it has no code (keep this the same as Oak)
+    minecraft "com.mojang:minecraft:1.14.4"
+    mappings "net.fabricmc:yarn:1.14.4+build.18:v2"
+}
+
 subprojects {
     jar {
         from "../LICENSE"
@@ -10,5 +16,14 @@ subprojects {
 
     tasks.withType(JavaCompile) {
         options.encoding = "UTF-8"
+    }
+}
+
+// don't run genSources on rootProject, since it has no actual sources
+gradle.taskGraph.whenReady { graph ->
+    graph.allTasks.findAll { it.name == "genSources" }*.each {
+        if (it.project == rootProject) {
+            it.enabled = false
+        }
     }
 }
