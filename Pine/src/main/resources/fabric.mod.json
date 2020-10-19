@@ -12,7 +12,7 @@
     "sources": "https://github.com/RDIL/Cherry/"
   },
   "license": "MIT",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/cherry/icon.png",
   "environment": "client",
   "entrypoints": {
     "main": [
