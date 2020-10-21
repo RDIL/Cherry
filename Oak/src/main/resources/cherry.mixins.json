@@ -8,7 +8,6 @@
     "MixinBossBarHud",
     "MixinClientPlayerEntity",
     "MixinConnectScreen",
-    "MixinCrashReport",
     "MixinEntityRenderer",
     "MixinGameMenuScreen",
     "MixinInGameHud",
