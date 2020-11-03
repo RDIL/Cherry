@@ -1,3 +1,3 @@
 # Cherry
 
-Cherry is a helpful Minecraft client.
+Cherry is a helpful Minecraft mod.
