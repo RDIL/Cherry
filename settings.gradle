@@ -15,7 +15,7 @@ ext.buildCacheHost = System.getenv().getOrDefault("CIRRUS_HTTP_CACHE_HOST", "loc
 
 buildCache {
     local {
-        enabled = !isCiServer
+        enabled !isCiServer
     }
 
     remote(HttpBuildCache) {

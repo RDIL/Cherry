@@ -21,9 +21,12 @@ subprojects {
 
 // don't run genSources on rootProject, since it has no actual sources
 gradle.taskGraph.whenReady { graph ->
-    graph.allTasks.findAll { it.name == "genSources" }*.each {
+    // tasks that are always disabled on the root project
+    def rootProjectDisabled = ["genSources", "jar", "remapJar"]
+
+    graph.allTasks.findAll { rootProjectDisabled.contains it.name }*.each {
         if (it.project == rootProject) {
-            it.enabled = false
+            it.enabled false
         }
     }
 }

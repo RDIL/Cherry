@@ -3,7 +3,7 @@
   "id": "cherry",
   "version": "${version}",
   "name": "Cherry",
-  "description": "The Cherry Minecraft utility mod for 1.16.2!",
+  "description": "The Cherry Minecraft utility mod for 1.16.2, 1.16.3, and 1.16.4!",
   "authors": [
     "Reece Dunham"
   ],
@@ -16,7 +16,7 @@
   "environment": "client",
   "entrypoints": {
     "main": [
-      "rocks.rdil.cherry.Startup"
+      "rocks.rdil.cherry.Cherry"
     ]
   },
   "mixins": [
