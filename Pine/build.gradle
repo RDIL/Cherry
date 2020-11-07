@@ -22,9 +22,9 @@ repositories {
 }
 
 dependencies {
-    minecraft "com.mojang:minecraft:1.16.2"
-    mappings "net.fabricmc:yarn:1.16.2+build.47"
-    modImplementation "net.fabricmc:fabric-loader:0.10.3+build.211"
+    minecraft "com.mojang:minecraft:1.16.4"
+    mappings "net.fabricmc:yarn:1.16.4+build.6"
+    modImplementation "net.fabricmc:fabric-loader:0.10.6+build.214"
     modImplementation "rocks.rdil:simpleconfig:2.0.0"
     include "rocks.rdil:simpleconfig:2.0.0"
 }

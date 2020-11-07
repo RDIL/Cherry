@@ -4,15 +4,17 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
-import rocks.rdil.cherry.Startup;
-import rocks.rdil.cherry.config.CherryOptions;
+import rocks.rdil.cherry.Cherry;
+import rocks.rdil.cherry.gui.widgets.WidgetSettings;
 
-public class PotionWidgetSettings extends Screen {
+public class WidgetSettingsGuiFactory<C extends WidgetSettings> extends Screen {
     private final Screen parent;
+    private final C widgetSettings;
 
-    public PotionWidgetSettings(Screen parent) {
-        super(getTitleTextComponent());
+    public WidgetSettingsGuiFactory(Screen parent, C widgetSettings, String name) {
+        super(getTitleTextComponent(name));
         this.parent = parent;
+        this.widgetSettings = widgetSettings;
     }
 
     protected void init() {
@@ -21,32 +23,32 @@ public class PotionWidgetSettings extends Screen {
         int y2 = y + (this.height / 10);
         int y3 = y2 + (this.height / 10);
 
-        CherryOptions c = CherryOptions.INSTANCE;
+        C c = this.widgetSettings;
 
-        ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, new LiteralText(GuiUtil.fromConfig(c.enablePotionsWidget)), button -> {
-            c.enablePotionsWidget = !c.enablePotionsWidget;
-            Startup.INSTANCE.saveConfig();
-            button.setMessage(new LiteralText(GuiUtil.fromConfig(c.enablePotionsWidget)));
+        ButtonWidget enabled = new ButtonWidget(x, y, 200, 20, new LiteralText(GuiUtil.fromConfig(c.isEnabled)), button -> {
+            c.isEnabled = !c.isEnabled;
+            Cherry.INSTANCE.saveConfig();
+            button.setMessage(new LiteralText(GuiUtil.fromConfig(c.isEnabled)));
         });
 
         ButtonWidget moveLeft = new ButtonWidget(x - 5, y2, 100, 20, new LiteralText("Move Left"), button -> {
-            CherryOptions.INSTANCE.potWidgetX -= 5;
-            Startup.INSTANCE.saveConfig();
+           c.xPos -= 5;
+           Cherry.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveRight = new ButtonWidget(x + 105, y2, 100, 20, new LiteralText("Move Right"), button -> {
-            CherryOptions.INSTANCE.potWidgetX += 5;
-            Startup.INSTANCE.saveConfig();
+            c.xPos += 5;
+            Cherry.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveUp = new ButtonWidget(x - 5, y3, 100, 20, new LiteralText("Move Up"), button -> {
-            CherryOptions.INSTANCE.potWidgetY -= 5;
-            Startup.INSTANCE.saveConfig();
+            c.yPos -= 5;
+            Cherry.INSTANCE.saveConfig();
         });
 
         ButtonWidget moveDown = new ButtonWidget(x + 105, y3, 100, 20, new LiteralText("Move Down"), button -> {
-            CherryOptions.INSTANCE.potWidgetY += 5;
-            Startup.INSTANCE.saveConfig();
+            c.yPos += 5;
+            Cherry.INSTANCE.saveConfig();
         });
 
         this.addButton(GuiUtil.makeBackButton(parent));
@@ -63,7 +65,7 @@ public class PotionWidgetSettings extends Screen {
         super.render(matrixStack, mouseX, mouseY, delta);
     }
 
-    public static LiteralText getTitleTextComponent() {
-        return new LiteralText("Potions Widget");
+    public static LiteralText getTitleTextComponent(String name) {
+        return new LiteralText(name + " Widget Settings");
     }
 }

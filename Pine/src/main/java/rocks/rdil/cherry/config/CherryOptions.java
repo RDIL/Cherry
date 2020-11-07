@@ -12,11 +12,5 @@ public class CherryOptions {
     @Option public boolean fullbright = false;
     @Option public boolean hideBats = false;
     @Option public boolean widgetsUseSquareBraces = false;
-    @Option public boolean fpsWidgetEnabled = false;
-    @Option public int fpsWidgetX = 0;
-    @Option public int fpsWidgetY = 0;
     @Option public boolean enableBossbar = true;
-    @Option public boolean enablePotionsWidget = false;
-    @Option public int potWidgetX = 0;
-    @Option public int potWidgetY = 0;
 }

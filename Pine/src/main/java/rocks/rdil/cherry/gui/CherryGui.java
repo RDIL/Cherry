@@ -20,7 +20,7 @@ public class CherryGui extends Screen {
         int y2 = y + (this.height / 10);
 
         ButtonWidget general = new ButtonWidget(x, y, 200, 20, new LiteralText("General Settings"), button -> MinecraftClient.getInstance().openScreen(new GeneralSettings(this)));
-        ButtonWidget widgets = new ButtonWidget(x, y2, 200, 20, new LiteralText("HUD Widget Settings"), button -> MinecraftClient.getInstance().openScreen(new WidgetSettings(this)));
+        ButtonWidget widgets = new ButtonWidget(x, y2, 200, 20, new LiteralText("HUD Widgets Settings"), button -> MinecraftClient.getInstance().openScreen(new AllWidgetsSettings(this)));
 
         this.addButton(general);
         this.addButton(widgets);

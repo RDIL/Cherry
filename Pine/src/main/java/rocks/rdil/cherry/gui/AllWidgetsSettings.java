@@ -1,40 +1,50 @@
 package rocks.rdil.cherry.gui;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.LiteralText;
-import rocks.rdil.cherry.Startup;
+import rocks.rdil.cherry.Cherry;
 import rocks.rdil.cherry.config.CherryOptions;
 
-public class WidgetSettings extends Screen {
+public class AllWidgetsSettings extends Screen {
     private final Screen parent;
 
-    public WidgetSettings(Screen parent) {
+    public AllWidgetsSettings(Screen parent) {
         super(getTitleTextComponent());
         this.parent = parent;
     }
 
     protected void init() {
         final int x = this.width / 2 - 100;
-        int y = this.height / 7;
-        int y2 = y + (this.height / 10);
-        int y3 = y2 + (this.height / 10);
-
-        ButtonWidget fps = new ButtonWidget(x, y, 200, 20, new LiteralText("FPS Widget"), button -> MinecraftClient.getInstance().openScreen(new FpsWidgetSettings(this)));
-        ButtonWidget potions = new ButtonWidget(x, y2, 200, 20, new LiteralText("Potions Widget"), button -> MinecraftClient.getInstance().openScreen(new PotionWidgetSettings(this)));
+        final AtomicInteger a = new AtomicInteger(0);
+        
+        Cherry.INSTANCE.getAllWidgets().forEach(widget -> {
+            final String widgetName = widget.getName();
+            final ButtonWidget b = new ButtonWidget(
+                x,
+                GuiUtil.getPaddedY(this.height, a.getAndIncrement()),
+                200,
+                20,
+                new LiteralText(widgetName + " Widget"),
+                button -> MinecraftClient.getInstance().openScreen(
+                    new WidgetSettingsGuiFactory<>(this, widget.getConfig(), widget.getName())
+                )
+            );
+            this.addButton(b);
+        });
 
         CherryOptions c = CherryOptions.INSTANCE;
 
-        ButtonWidget squareBrace = new ButtonWidget(x, y3, 200, 20, new LiteralText("Use Square Braces: " + GuiUtil.fromConfig(c.widgetsUseSquareBraces)), button -> {
+        ButtonWidget squareBrace = new ButtonWidget(x, GuiUtil.getPaddedY(this.height, a.getAndIncrement()), 200, 20, new LiteralText("Use Square Braces: " + GuiUtil.fromConfig(c.widgetsUseSquareBraces)), button -> {
             c.widgetsUseSquareBraces = !c.widgetsUseSquareBraces;
-            Startup.INSTANCE.saveConfig();
+            Cherry.INSTANCE.saveConfig();
             button.setMessage(new LiteralText("Use Square Braces: " + GuiUtil.fromConfig(c.widgetsUseSquareBraces)));
         });
 
-        this.addButton(fps);
-        this.addButton(potions);
         this.addButton(squareBrace);
         this.addButton(GuiUtil.makeBackButton(parent));
     }

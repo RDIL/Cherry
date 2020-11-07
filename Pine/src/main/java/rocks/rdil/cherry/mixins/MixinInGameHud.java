@@ -8,8 +8,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
-import rocks.rdil.cherry.config.CherryOptions;
 import rocks.rdil.cherry.events.RenderHudCallback;
+import rocks.rdil.cherry.gui.widgets.PotionsWidget;
 
 @Mixin(InGameHud.class)
 public class MixinInGameHud extends DrawableHelper {
@@ -20,7 +20,7 @@ public class MixinInGameHud extends DrawableHelper {
 
     @Inject(at = @At("HEAD"), method = "renderStatusEffectOverlay", cancellable = true)
     public void renderStatusEffectOverlay(CallbackInfo ci) {
-        if (CherryOptions.INSTANCE.enablePotionsWidget) {
+        if (PotionsWidget.Configuration.INSTANCE.isEnabled) {
             ci.cancel();
         }
     }
