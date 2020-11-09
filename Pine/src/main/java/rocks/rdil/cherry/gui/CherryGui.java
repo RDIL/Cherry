@@ -1,5 +1,7 @@
 package rocks.rdil.cherry.gui;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -16,11 +18,10 @@ public class CherryGui extends Screen {
 
     protected void init() {
         final int x = this.width / 2 - 100;
-        int y = this.height / 7;
-        int y2 = y + (this.height / 10);
+        final AtomicInteger a = new AtomicInteger(0);
 
-        ButtonWidget general = new ButtonWidget(x, y, 200, 20, new LiteralText("General Settings"), button -> MinecraftClient.getInstance().openScreen(new GeneralSettings(this)));
-        ButtonWidget widgets = new ButtonWidget(x, y2, 200, 20, new LiteralText("HUD Widgets Settings"), button -> MinecraftClient.getInstance().openScreen(new AllWidgetsSettings(this)));
+        ButtonWidget general = new ButtonWidget(x, GuiUtil.getPaddedY(this.height, a.getAndIncrement()), 200, 20, new LiteralText("General Settings"), button -> MinecraftClient.getInstance().openScreen(new GeneralSettings(this)));
+        ButtonWidget widgets = new ButtonWidget(x, GuiUtil.getPaddedY(this.height, a.getAndIncrement()), 200, 20, new LiteralText("HUD Widgets Settings"), button -> MinecraftClient.getInstance().openScreen(new AllWidgetsSettings(this)));
 
         this.addButton(general);
         this.addButton(widgets);
