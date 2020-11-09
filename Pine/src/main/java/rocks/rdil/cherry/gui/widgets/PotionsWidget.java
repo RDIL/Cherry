@@ -18,6 +18,11 @@ public class PotionsWidget extends Widget<PotionsWidget.Configuration> {
     }
 
     @Override
+    public String getName() {
+        return "Potion Effects";
+    }
+
+    @Override
     public void render(MatrixStack matrixStack, DrawableHelper s) {
         if (MinecraftClient.isHudEnabled() && PotionsWidget.Configuration.INSTANCE.isEnabled) {
             // we add 10 to this each time we render a new effect so it doesn't overlap effects

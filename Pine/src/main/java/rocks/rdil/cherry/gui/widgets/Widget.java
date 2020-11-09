@@ -30,42 +30,35 @@ public abstract class Widget<C extends WidgetSettings> {
     }
 
     /**
-     * Default name value.
+     * Get the name/prefix of the widget.
+     * 
+     * @return The name.
      */
     public String getName() {
-        return this.getPrefix();
-    }
-
-    /**
-     * Get the prefix of the widget.
-     * 
-     * @return The prefix.
-     */
-    public String getPrefix() {
         return "My Epic Widget";
     }
 
     /**
-     * Get the suffix of the widget.
+     * Get the value/display string of the widget.
      * 
-     * @return The suffix.
+     * @return The value.
      */
-    public String getSuffix() {
+    public String getValue() {
         return "Some data";
     }
 
     /**
-     * Get the display string of the widget.
+     * Get the final display string of the widget.
      *
-     * @see {@link rocks.rdil.cherry.gui.widgets.Widget#getPrefix()}
-     * @see {@link rocks.rdil.cherry.gui.widgets.Widget#getSuffix()}
+     * @see {@link rocks.rdil.cherry.gui.widgets.Widget#getName()}
+     * @see {@link rocks.rdil.cherry.gui.widgets.Widget#getValue()}
      * @return The string to display.
      */
     public String getDisplay() {
         if (CherryOptions.INSTANCE.widgetsUseSquareBraces) {
-            return "[" + this.getPrefix() + "] " + this.getSuffix();
+            return "[" + this.getName() + "] " + this.getValue();
         }
-        return this.getPrefix() + ": " + this.getSuffix();
+        return this.getName() + ": " + this.getValue();
     }
 
     /**

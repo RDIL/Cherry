@@ -10,12 +10,12 @@ public class FpsWidget extends Widget<FpsWidget.Configuration> {
     }
 
     @Override
-    public String getPrefix() {
+    public String getName() {
         return "FPS";
     }
 
     @Override
-    public String getSuffix() {
+    public String getValue() {
         return String.valueOf(((IMixinMinecraftClient) MinecraftClient.getInstance()).getCurrentFps());
     }
 
