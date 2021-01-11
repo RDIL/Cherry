@@ -2,7 +2,7 @@ package rocks.rdil.cherry.mixins;
 
 import org.spongepowered.asm.mixin.Mixin;
 
-import rocks.rdil.simpleconfig.config.CherryOptions;
+import rocks.rdil.cherry.config.CherryOptions;
 import net.minecraft.client.gui.screen.ConnectScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
