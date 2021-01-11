@@ -25,6 +25,7 @@ public class GeneralSettings extends Screen {
         int y3 = y2 + (this.height / 10);
         int y4 = y3 + (this.height / 10);
         int y5 = y4 + (this.height / 10);
+        int y6 = y5 + (this.height / 10);
 
         CherryOptions c = CherryOptions.INSTANCE;
 
@@ -58,12 +59,19 @@ public class GeneralSettings extends Screen {
             button.setMessage("BossBar: " + fromConfig(c.enableBossbar));
         });
 
+        ButtonWidget spinnerEnabled = new ButtonWidget(x, y6, 200, 20, "Connecting Screen Spinner: " + fromConfig(c.loadingScreenSpinner), button -> {
+            c.loadingScreenSpinner = !c.loadingScreenSpinner;
+            Startup.INSTANCE.saveConfig();
+            button.setMessage("Connecting Screen Spinner: " + fromConfig(c.loadingScreenSpinner));
+        });
+
         this.addButton(GuiUtil.makeBackButton(parent));
         this.addButton(toggleSprint);
         this.addButton(enableTutorialPopups);
         this.addButton(fullbright);
         this.addButton(hideBats);
         this.addButton(bossbarEnabled);
+        this.addButton(spinnerEnabled);
     }
 
     public void render(int mouseX, int mouseY, float delta) {

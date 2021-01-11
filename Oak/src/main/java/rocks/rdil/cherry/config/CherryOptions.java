@@ -19,4 +19,5 @@ public class CherryOptions {
     @Option public boolean enablePotionsWidget = false;
     @Option public int potWidgetX = 0;
     @Option public int potWidgetY = 0;
+    @Option public boolean loadingScreenSpinner = false;
 }
